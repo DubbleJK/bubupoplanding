@@ -33,9 +33,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[100] w-full border-b-2 border-gray-200 bg-white">
       <div className="relative z-[110] mx-auto flex h-14 max-w-4xl items-center justify-between bg-white px-4 sm:h-16 sm:px-6">
+        {/* 우측 메뉴 버튼과 너비를 맞춰 로고가 화면 정중앙에 오도록 */}
+        <div className="h-11 w-11 shrink-0" aria-hidden />
+
         <Link
           href="/"
-          className="relative z-[111] flex min-h-[44px] min-w-[44px] items-center"
+          className="absolute left-1/2 top-1/2 z-[111] flex min-h-[44px] -translate-x-1/2 -translate-y-1/2 items-center justify-center"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -43,7 +46,7 @@ export default function Header() {
             alt="부부피오피"
             width={560}
             height={160}
-            className="h-10 w-auto max-w-[200px] sm:h-14 sm:max-w-[280px]"
+            className="h-10 w-auto max-w-[min(200px,calc(100vw-7rem))] sm:h-14 sm:max-w-[min(280px,calc(100vw-8rem))]"
             priority
           />
         </Link>

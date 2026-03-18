@@ -51,7 +51,8 @@ export default function LocationPage() {
             <h2 className={sectionLabel}>지도</h2>
             <div className="mt-2 rounded-xl border border-primary/25 bg-orange-50/80 px-4 py-3 sm:flex sm:items-center sm:justify-between sm:gap-4 sm:py-3.5">
               <p className="text-sm leading-snug text-gray-800 sm:text-[15px] sm:leading-relaxed">
-                <span className="font-bold text-primary">도착하셨나요?</span>{' '}
+                <span className="font-bold text-primary">도착하셨나요?</span>
+                <br />
                 현대 슈퍼 옆 계단·철문 안내로 바로 이동할 수 있어요.
               </p>
               <a
