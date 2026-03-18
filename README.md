@@ -25,6 +25,8 @@ npm run build
 npm start
 ```
 
+**Vercel**에 올릴 때는 로컬 `.env`가 자동으로 가지 않습니다. 푸터·지도·전화가 비어 있으면 대시보드 **Settings → Environment Variables**에 값을 넣고 다시 배포하세요. 자세한 목록은 [`docs/Vercel-환경변수-설정.md`](docs/Vercel-환경변수-설정.md) 참고.
+
 ## 페이지 구조
 
 - `/` - 메인 (히어로, 품목 선택, 강점, 추천 패키지, 주문 방법, 제작 사례, 후기, FAQ)

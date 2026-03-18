@@ -15,6 +15,7 @@ const MENU_LINKS = [
   { href: '/goods', label: '굿즈' },
   { href: '/election', label: '선거용품' },
   { href: '/another', label: '기타' },
+  { href: '/location', label: '오시는 길' },
 ];
 
 export default function Header() {
@@ -96,13 +97,13 @@ export default function Header() {
             className="fixed left-0 right-0 top-14 z-[108] max-h-[min(75dvh,calc(100dvh-3.5rem))] overflow-y-auto overscroll-contain border-b border-gray-200 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:top-16 sm:max-h-[min(70dvh,calc(100dvh-4rem))]"
             aria-label="메인 메뉴"
           >
-            <div className="mx-auto max-w-4xl px-4 py-3 sm:px-6 sm:py-4">
+            <div className="mx-auto max-w-4xl px-4 py-2 sm:px-6 sm:py-3">
               <ul className="flex flex-col divide-y divide-gray-100">
                 {MENU_LINKS.map(({ href, label }) => (
                   <li key={href}>
                     <Link
                       href={href}
-                      className="block min-h-[48px] py-3.5 text-base font-bold text-gray-900 transition hover:bg-primary-light hover:text-primary active:bg-orange-50 sm:py-3"
+                      className="block py-2.5 text-sm font-bold leading-tight text-gray-900 transition hover:bg-primary-light hover:text-primary active:bg-orange-50 sm:min-h-[44px] sm:py-3 sm:text-base sm:leading-normal"
                       onClick={() => setOpen(false)}
                     >
                       {label}
@@ -110,15 +111,6 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-2 border-t-2 border-gray-100 pt-2">
-                <Link
-                  href="/location"
-                  className="block min-h-[48px] py-3.5 text-base font-bold text-gray-900 transition hover:bg-primary-light hover:text-primary sm:py-3"
-                  onClick={() => setOpen(false)}
-                >
-                  오시는 길
-                </Link>
-              </div>
             </div>
           </nav>
         </>

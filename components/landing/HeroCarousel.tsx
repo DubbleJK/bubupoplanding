@@ -40,12 +40,12 @@ export default function HeroCarousel({ slides }: Props) {
                 />
 
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"
+                  className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-transparent sm:from-black/75 sm:via-black/40"
                   aria-hidden
                 />
 
-                <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-8">
-                  <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white backdrop-blur">
+                <div className="absolute inset-0 flex flex-col justify-end p-4 pb-3 sm:p-8 sm:pb-8">
+                  <div className="inline-flex w-fit max-w-[95%] items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-bold text-white backdrop-blur sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
                     <span
                       className="inline-flex h-2 w-2 rounded-full bg-primary"
                       aria-hidden
@@ -54,22 +54,22 @@ export default function HeroCarousel({ slides }: Props) {
                   </div>
 
                   {i === 0 ? (
-                    <h1 className="mt-4 text-3xl font-black leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] sm:text-4xl md:text-5xl">
+                    <h1 className="mt-2 max-w-[98%] text-[1.35rem] font-black leading-[1.15] tracking-tight text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] sm:mt-4 sm:max-w-none sm:text-3xl sm:leading-[1.1] md:text-4xl lg:text-5xl">
                       <span className="block">{s.titleLines.top}</span>
-                      <span className="mt-2 block text-primary drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
+                      <span className="mt-1 block text-primary drop-shadow-[0_1px_10px_rgba(0,0,0,0.65)] sm:mt-2 sm:drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
                         {s.titleLines.highlight}
                       </span>
                     </h1>
                   ) : (
-                    <h2 className="mt-4 text-3xl font-black leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] sm:text-4xl md:text-5xl">
+                    <h2 className="mt-2 max-w-[98%] text-[1.35rem] font-black leading-[1.15] tracking-tight text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] sm:mt-4 sm:max-w-none sm:text-3xl sm:leading-[1.1] md:text-4xl lg:text-5xl">
                       <span className="block">{s.titleLines.top}</span>
-                      <span className="mt-2 block text-primary drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
+                      <span className="mt-1 block text-primary drop-shadow-[0_1px_10px_rgba(0,0,0,0.65)] sm:mt-2 sm:drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
                         {s.titleLines.highlight}
                       </span>
                     </h2>
                   )}
 
-                  <p className="mt-3 text-sm font-semibold text-white/90 sm:text-base">
+                  <p className="mt-2 text-xs font-semibold leading-snug text-white/88 sm:mt-3 sm:text-base sm:leading-normal">
                     {s.subtitle}
                   </p>
                 </div>

@@ -57,7 +57,7 @@ export default function FaqSection({
               >
                 <span>{q}</span>
                 <span
-                  className={`shrink-0 text-gray-500 transition-transform ${
+                  className={`shrink-0 text-lg text-orange-400 transition-transform drop-shadow-sm ${
                     openIndex === i ? 'rotate-180' : ''
                   }`}
                   aria-hidden
