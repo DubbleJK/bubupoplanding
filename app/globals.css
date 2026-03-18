@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:root {
+  --color-primary: #ea580c;
+  --color-primary-hover: #c2410c;
+  --color-primary-light: #fff7ed;
+}
+
+body {
+  @apply bg-white text-gray-900 antialiased;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* 섹션 제목: 직관적 가독 */
+.section-title {
+  @apply text-xl font-bold tracking-tight text-gray-900 sm:text-2xl;
+}
+
+/* 섹션 공통: 간격/정렬 통일 */
+.section {
+  @apply border-t border-gray-200 px-4 py-12 sm:py-16;
+}
+
+.section-muted {
+  @apply bg-gray-50;
+}
+
+.section-primary {
+  @apply bg-primary-light;
+}
+
+.container {
+  @apply mx-auto max-w-4xl;
+}
+
+.section-desc {
+  @apply mt-2 text-gray-600;
+}
+
+/* 하단 고정 CTA 공간 확보 */
+body.has-fixed-cta {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.has-fixed-cta {
+    padding-bottom: 6rem;
+  }
+}
