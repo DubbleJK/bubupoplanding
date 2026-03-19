@@ -99,17 +99,17 @@ export default function PackageSection({ packages }: Props) {
         >
           {isHome ? (
             <>
-              <span className="block">
+              <span>
                 VAT·배송비는 별도이며, 용지·재질·인쇄 상황에 따라 가격이 달라질 수 있습니다.
               </span>
-              <span className="mt-1 block">정확한 금액은 카톡 문의 시 안내드립니다.</span>
+              <span> 정확한 금액은 카톡 문의 시 안내드립니다.</span>
             </>
           ) : (
             <>
-              <span className="block">
+              <span>
                 VAT·배송비 별도 · 사양·수량에 따라 견적이 달라질 수 있습니다.
               </span>
-              <span className="mt-1 block">정확한 금액은 카톡 문의 시 안내드립니다.</span>
+              <span> 정확한 금액은 카톡 문의 시 안내드립니다.</span>
             </>
           )}
         </p>
