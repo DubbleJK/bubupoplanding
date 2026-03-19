@@ -23,20 +23,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     siteName: '부부피오피',
-    images: [
-      {
-        url: '/images/og-bubupop-card.svg',
-        width: 1200,
-        height: 630,
-        alt: '부부피오피 로고',
-      },
-    ],
+    // og:image는 app/opengraph-image.tsx 가 PNG로 자동 생성 (카카오톡은 SVG 미지원)
   },
   twitter: {
     card: 'summary_large_image',
     title: '부부피오피',
     description: '급한 인쇄·굿즈 당일 제작, 소량 가능',
-    images: ['/images/og-bubupop-card.svg'],
+    // twitter:image는 app/twitter-image.tsx 가 동일 규격 PNG로 생성
   },
 };
 
