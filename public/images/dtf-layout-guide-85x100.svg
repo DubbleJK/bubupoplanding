@@ -1,0 +1,53 @@
+﻿<svg width="1080" height="1720" viewBox="0 0 1080 1720" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1080" height="1720" fill="#F3F4F6"/>
+  <rect x="24" y="24" width="1032" height="1672" rx="20" fill="#F3F4F6" stroke="#D1D5DB"/>
+
+  <rect x="80" y="60" width="920" height="90" rx="45" fill="#E8D26B"/>
+  <text x="540" y="118" text-anchor="middle" fill="#374151" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="56" font-weight="800">DTF 파일 배치 가이드</text>
+
+  <rect x="140" y="210" width="800" height="980" fill="#FFFFFF" stroke="#E74B32" stroke-width="10"/>
+  <text x="540" y="198" text-anchor="middle" fill="#E74B32" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="50" font-weight="800">85cm</text>
+  <text x="880" y="705" fill="#E74B32" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="50" font-weight="800">100cm</text>
+
+  <!-- 내부 로고 샘플 배치 -->
+  <g>
+    <image href="/images/logo.png" x="165" y="245" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="355" y="245" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="545" y="245" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="735" y="245" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+
+    <image href="/images/logo.png" x="165" y="355" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="355" y="355" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="545" y="355" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="735" y="355" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+
+    <image href="/images/logo.png" x="165" y="465" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="355" y="465" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="545" y="465" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="735" y="465" width="170" height="90" preserveAspectRatio="xMidYMid meet"/>
+
+    <image href="/images/logo.png" x="190" y="650" width="120" height="420" transform="rotate(-90 250 860)" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="325" y="650" width="120" height="420" transform="rotate(-90 385 860)" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="460" y="650" width="120" height="420" transform="rotate(-90 520 860)" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="595" y="650" width="120" height="420" transform="rotate(-90 655 860)" preserveAspectRatio="xMidYMid meet"/>
+    <image href="/images/logo.png" x="730" y="650" width="120" height="420" transform="rotate(-90 790 860)" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+
+  <g fill="#4B5563" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="42" font-weight="700">
+    <text x="95" y="1285">- 가로 85cm × 세로 100cm 안에 이미지를 배치해 주세요.</text>
+    <text x="95" y="1345">- 재단선이 필요하면 동일 이미지를 간격 두고 배치해 주세요.</text>
+    <text x="95" y="1405">- 2m 이상 동일 이미지는 1m 기준 파일 1개만 전달해 주세요.</text>
+    <text x="95" y="1465">- 2m 이상 서로 다른 이미지는 개별 파일로 전달해 주세요.</text>
+  </g>
+
+  <rect x="80" y="1500" width="920" height="90" rx="45" fill="#E8D26B"/>
+  <text x="540" y="1558" text-anchor="middle" fill="#374151" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="56" font-weight="800">파일 설정 체크리스트</text>
+
+  <g fill="#4B5563" font-family="Pretendard, Noto Sans KR, sans-serif">
+    <text x="150" y="1650" font-size="54" font-weight="800">300 DPI 이상</text>
+    <text x="150" y="1694" font-size="34" font-weight="600">해상도가 낮으면 깨지거나 흐릿해질 수 있어요.</text>
+
+    <text x="600" y="1650" font-size="54" font-weight="800">CMYK 설정</text>
+    <text x="600" y="1694" font-size="34" font-weight="600">RGB와 색차가 날 수 있어 CMYK를 권장합니다.</text>
+  </g>
+</svg>

@@ -23,6 +23,7 @@ type ServicePageLayoutProps = {
   subtitle: string;
   description?: string | ReactNode;
   children?: ReactNode;
+  afterPackages?: ReactNode;
   packages?: ServicePackage[];
   portfolioItems?: ServicePortfolioItem[];
   /** 영상·이미지 히어로 (영상 시 poster로 첫 화면) */
@@ -48,6 +49,7 @@ export default function ServicePageLayout({
   subtitle,
   description,
   children,
+  afterPackages,
   packages = DEFAULT_PACKAGES,
   portfolioItems = [],
   heroImage,
@@ -77,6 +79,7 @@ export default function ServicePageLayout({
         <ServicePortfolioSection items={portfolioItems} />
       )}
       <PackageSection packages={packages} />
+      {afterPackages}
       <ProcessSection />
       {faqItems != null && faqItems.length > 0 ? (
         <FaqSection items={faqItems} title={faqTitle ?? '자주 묻는 질문'} />
