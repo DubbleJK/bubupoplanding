@@ -11,8 +11,8 @@ const DEFAULT_FEATURES: FeatureSectionItem[] = [
   },
   { title: '10년 제작 경험', desc: '10년 이상 제작 노하우로 빠르고 정확하게 진행합니다.' },
   {
-    title: '다양한 용지 제작 가능',
-    desc: '필요에 따라 맞는 스티커를 추천하고 제작해드립니다.',
+    title: '빠른 소재 선택 & 제작 가능',
+    desc: '상황에 맞게 바로 제작 진행해드립니다.',
   },
 ];
 
