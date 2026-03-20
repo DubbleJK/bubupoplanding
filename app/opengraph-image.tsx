@@ -1,8 +1,8 @@
-import { ImageResponse } from 'next/og';
+﻿import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = '부부피오피 로고';
+export const alt = 'BUBUPOP logo';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -15,21 +15,17 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
   return btoa(binary);
 }
 
-/**
- * 카카오톡 등은 og:image SVG를 거의 표시하지 않아 PNG를 생성합니다.
- * Edge 런타임에서는 public 파일을 직접 읽을 수 없어, 공개 URL로 logo.png 를 불러옵니다.
- */
 export default async function OpenGraphImage() {
   const base =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '') ||
     'https://bubupoplanding.vercel.app';
 
-  const logoW = 920;
-  const logoH = Math.round((160 / 560) * logoW);
+  const logoW = 520;
+  const logoH = 520;
 
   try {
-    const res = await fetch(`${base}/images/logo.png`);
+    const res = await fetch(`${base}/images/kakao-share-logo.png`);
     if (res.ok) {
       const buf = await res.arrayBuffer();
       const logoSrc = `data:image/png;base64,${arrayBufferToBase64(buf)}`;
@@ -45,7 +41,7 @@ export default async function OpenGraphImage() {
               background: '#FFFDF8',
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- @vercel/og 전용 */}
+            {/* eslint-disable-next-line @next/next/no-img-element -- @vercel/og */}
             <img
               alt=""
               src={logoSrc}
@@ -59,7 +55,7 @@ export default async function OpenGraphImage() {
       );
     }
   } catch {
-    /* 폴백으로 이동 */
+    // fallback below
   }
 
   return new ImageResponse(
@@ -76,20 +72,10 @@ export default async function OpenGraphImage() {
           color: '#2A1818',
         }}
       >
-        <div style={{ fontSize: 80, fontWeight: 800 }}>부부피오피</div>
+        <div style={{ fontSize: 80, fontWeight: 800 }}>BUBUPOP</div>
         <div
           style={{
-            fontSize: 48,
-            fontWeight: 800,
-            marginTop: 20,
-            letterSpacing: 8,
-          }}
-        >
-          BUBUPOP
-        </div>
-        <div
-          style={{
-            fontSize: 28,
+            fontSize: 32,
             fontWeight: 700,
             marginTop: 14,
             letterSpacing: 4,
