@@ -1,11 +1,13 @@
 'use client';
 
+import type { ReactNode } from 'react';
+
 const KAKAO_URL =
   process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
 
 export type PackageSectionItem = {
   title: string;
-  desc: string;
+  desc: string | ReactNode;
   tag?: string | null;
   /** 없으면 가격 줄 미표시 (서비스 하위 페이지용) */
   price?: string;
@@ -35,9 +37,14 @@ const HOME_PACKAGES: PackageSectionItem[] = [
 type Props = {
   /** 넘기면 메인용 대신 해당 목록(스티커/배너 등 서브 페이지) */
   packages?: PackageSectionItem[];
+  /** 패키지 카드 목록 바로 아래 (서브 페이지 안내 문구) */
+  noteBelowPackages?: string;
 };
 
-export default function PackageSection({ packages }: Props) {
+export default function PackageSection({
+  packages,
+  noteBelowPackages,
+}: Props) {
   const list = packages ?? HOME_PACKAGES;
   const isHome = packages == null;
 
@@ -78,7 +85,7 @@ export default function PackageSection({ packages }: Props) {
                       </span>
                     ) : null}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-600">{desc}</p>
+                  <div className="mt-1 text-sm text-gray-600">{desc}</div>
                 </div>
               </div>
               <a
@@ -87,11 +94,16 @@ export default function PackageSection({ packages }: Props) {
                 rel="noopener noreferrer"
                 className="mt-4 shrink-0 rounded-2xl bg-primary px-6 py-3 text-center font-bold text-white transition hover:bg-primary-hover sm:mt-0"
               >
-                카톡으로 문의하기
+                카카오톡으로 문의하기
               </a>
             </div>
           ))}
         </div>
+        {noteBelowPackages ? (
+          <p className="mt-4 max-w-2xl mx-auto whitespace-pre-line text-center text-base font-extrabold leading-relaxed text-primary sm:text-lg">
+            {noteBelowPackages}
+          </p>
+        ) : null}
         <p
           className={`mt-5 text-center text-xs leading-relaxed text-gray-500 ${
             isHome ? '' : 'max-w-2xl mx-auto'

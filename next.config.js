@@ -15,7 +15,12 @@ const nextConfig = {
       { protocol: 'https', hostname: 'mblogthumb-phinf.pstatic.net', pathname: '/**' },
       { protocol: 'https', hostname: 'cafeptthumb-phinf.pstatic.net', pathname: '/**' },
       { protocol: 'https', hostname: 'shop-phinf.pstatic.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'blogthumb.pstatic.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'ssl.pstatic.net', pathname: '/**' },
     ],
+  },
+  experimental: {
+    optimizePackageImports: ['embla-carousel-react', 'embla-carousel-autoplay'],
   },
   async headers() {
     /** 카카오 roughmap 제거 후: 서드파티 스크립트는 self + Next 필수만 허용 */

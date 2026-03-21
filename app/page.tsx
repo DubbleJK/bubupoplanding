@@ -1,4 +1,4 @@
-import BlogLatestGrid from '@/components/landing/BlogLatestGrid';
+import dynamic from 'next/dynamic';
 import CategoryGrid from '@/components/landing/CategoryGrid';
 import FaqSection from '@/components/landing/FaqSection';
 import FeatureSection from '@/components/landing/FeatureSection';
@@ -7,6 +7,30 @@ import PackageSection from '@/components/landing/PackageSection';
 import ProcessSection from '@/components/landing/ProcessSection';
 import ReviewSection from '@/components/landing/ReviewSection';
 import { getNaverBlogPosts } from '@/lib/naver-blog';
+
+/** Embla 등 클라이언트 번들 분리 + SSR로 블로그 링크는 초기 HTML에 유지(검색·SNS) */
+const BlogLatestGrid = dynamic(
+  () => import('@/components/landing/BlogLatestGrid'),
+  {
+    ssr: true,
+    loading: () => (
+      <section className="section section-muted" aria-busy="true" aria-label="블로그 섹션 로딩">
+        <div className="container">
+          <div className="h-6 w-48 animate-pulse rounded bg-gray-200" />
+          <div className="mt-2 h-4 w-full max-w-md animate-pulse rounded bg-gray-200" />
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="aspect-[4/3] animate-pulse rounded-2xl bg-gray-200"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    ),
+  }
+);
 
 export default async function HomePage() {
   const blogPosts = await getNaverBlogPosts(6);

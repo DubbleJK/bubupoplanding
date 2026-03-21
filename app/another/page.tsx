@@ -20,29 +20,29 @@ const FAQ = [
 ];
 
 const PACKAGES = [
-  { title: '기타 소량', desc: '당일 제작 가능', tag: '인기' as const },
-  { title: '기타 기본', desc: '문의 후 견적', tag: null },
+  { title: '각종 인쇄물 소량', desc: '당일 제작 가능', tag: '인기' as const },
+  { title: '각종 인쇄물 기본', desc: '문의 후 견적', tag: null },
   { title: '맞춤 제작', desc: '원하시는 형태 문의', tag: null },
 ];
 
 export const metadata = {
-  title: '기타 굿즈 제작 | 부부피오피',
+  title: '각종 인쇄물 제작 | 부부피오피',
   description: '다양한 굿즈·인쇄물 소량·당일 제작. 부부피오피에 문의해 주세요.',
 };
 
 export default function AnotherPage() {
   return (
     <ServicePageLayout
-      title="기타"
-      subtitle="기타"
+      title="각종 인쇄물"
+      subtitle="각종 인쇄물"
       description="스티커, 티셔츠, 명함 외 원하시는 굿즈나 인쇄물이 있으시면 편하게 문의해 주세요."
       packages={PACKAGES}
-      faqTitle="기타 제작 FAQ"
+      faqTitle="각종 인쇄물 제작 FAQ"
       faqItems={FAQ}
       portfolioItems={[
         { title: '맞춤 굿즈 세트' },
         { title: '소량 기념 굿즈' },
-        { title: '기타 인쇄물' },
+        { title: '각종 인쇄물' },
       ]}
     />
   );

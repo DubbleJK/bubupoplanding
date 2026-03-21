@@ -14,7 +14,7 @@ const MENU_LINKS = [
   { href: '/card', label: '명함' },
   { href: '/goods', label: '굿즈' },
   { href: '/election', label: '선거용품' },
-  { href: '/another', label: '기타' },
+  { href: '/another', label: '각종 인쇄물' },
   { href: '/location', label: '오시는 길' },
 ];
 

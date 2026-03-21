@@ -6,7 +6,7 @@ const FAQ = [
     a: '규격·수량·재질에 따라 다릅니다. 급하신 건은 카카오톡으로 가로·세로 크기·용도를 알려주시면 당일 가능 여부를 바로 안내해 드립니다.',
   },
   {
-    q: '디자인 파일은 어떤 형식으로내면 되나요?',
+    q: '디자인 파일은 어떤 형식으로 내면 되나요?',
     a: 'AI·PDF·JPG·PNG 등 여러 형식 가능합니다. 고해상도일수록 출력 품질에 유리합니다.',
   },
   {
@@ -77,10 +77,6 @@ export default function BannerPage() {
       faqItems={FAQ}
       portfolioItems={[
         {
-          title: '카페 배너',
-          imageSrc: '/images/portfolio-banner-cafe.png',
-        },
-        {
           title: '행사 배너',
           imageSrc: '/images/portfolio-banner-event.png',
         },
@@ -91,6 +87,10 @@ export default function BannerPage() {
         {
           title: '상가 배너',
           imageSrc: '/images/portfolio-banner-store.png',
+        },
+        {
+          title: '카페 배너',
+          imageSrc: '/images/portfolio-banner-cafe.png',
         },
         {
           title: '대량 배너',

@@ -6,6 +6,59 @@ const STICKER_FAQ = [
     a: '품목·수량·재질에 따라 다릅니다. 급하신 건은 카카오톡으로 사이즈·매수·용도만 알려주시면 당일 가능 여부와 출고 시간을 바로 안내해 드립니다.',
   },
   {
+    q: '스티커 재질은 어떤 게 있나요?',
+    a: (
+      <>
+        <div>
+          <p className="font-bold text-gray-900">당일 제작으로 많이 쓰는 재질</p>
+          <p className="mt-1 leading-relaxed">
+            무코팅 아트지, 모조지, 유포지, 투명 데드롱, 솔벤 시트 등
+          </p>
+        </div>
+        <div>
+          <p className="font-bold text-gray-900">1,000매 이상 대량 제작</p>
+          <p className="mt-1 leading-relaxed">
+            원하시는 재질로 맞춤 제작이 가능합니다.
+          </p>
+        </div>
+        <div>
+          <p className="font-bold text-gray-900">재질별 특징</p>
+          <ul className="mt-2 list-disc space-y-2 pl-5 leading-relaxed">
+            <li>
+              <strong className="font-bold text-gray-900">아트지</strong>
+              {' — '}
+              표면이 매끈하고 인쇄 색감이 또렷합니다. 라벨·성분표·실내용 스티커에
+              널리 쓰입니다.
+            </li>
+            <li>
+              <strong className="font-bold text-gray-900">모조지</strong>
+              {' — '}
+              종이 질감이 살아 고급스러운 인상을 줄 수 있어 명함형·브랜딩용에 잘
+              어울립니다.
+            </li>
+            <li>
+              <strong className="font-bold text-gray-900">유포지</strong>
+              {' — '}
+              방수·내구성이 좋아 냉장·냉동 라벨이나 습기·물기가 있는 환경에
+              적합합니다.
+            </li>
+            <li>
+              <strong className="font-bold text-gray-900">솔벤 시트 스티커</strong>
+              {' — '}
+              내후성·내수성이 뛰어나 실외 부착·차량·간판 등 장기 노출이 필요한
+              용도에 자주 선택됩니다.
+            </li>
+          </ul>
+        </div>
+        <p className="leading-relaxed">
+          <strong className="font-bold text-gray-900">맞춤 추천</strong>
+          {' — '}
+          용도와 부착 면을 알려주시면 재질을 추천해 드립니다.
+        </p>
+      </>
+    ),
+  },
+  {
     q: '디자인 파일이 없거나 AI 이미지만 있는데도 되나요?',
     a: '가능합니다. JPG·PNG·PDF 등으로 보내주시면 되고, 해상도만 인쇄에 맞게 있으면 됩니다. 시안 정리가 필요하면 문의 시 말씀해 주세요.',
   },
@@ -15,7 +68,7 @@ const STICKER_FAQ = [
   },
   {
     q: '대량도 당일 출고가 되나요?',
-    a: '네 가능합니다. 용지 재질, 스티커 사이즈에 따라 출고 가능여부가 결정되니 빠르게 문의 주시면 답변 드리겠습니다.',
+    a: '네 가능합니다. 용지 재질, 스티커 사이즈에 따라 출고 가능 여부가 결정되니 빠르게 문의 주시면 답변 드리겠습니다.',
   },
 ];
 

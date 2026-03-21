@@ -17,13 +17,13 @@ export default function CtaBlock() {
             rel="noopener noreferrer"
             className="flex flex-1 items-center justify-center rounded-2xl bg-[#FEE500] py-4 text-base font-bold text-[#191919] transition hover:opacity-90 sm:min-h-[3.25rem]"
           >
-            카카오톡 문의
+            카카오톡으로 문의하기
           </a>
           <a
             href={`tel:${PHONE.replace(/-/g, '')}`}
             className="flex flex-1 items-center justify-center rounded-2xl border-2 border-gray-900 bg-white py-4 text-base font-bold text-gray-900 transition hover:bg-gray-50 sm:min-h-[3.25rem]"
           >
-            전화 문의
+            전화로 문의하기
           </a>
         </div>
       </div>

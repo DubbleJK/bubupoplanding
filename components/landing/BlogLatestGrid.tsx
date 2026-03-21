@@ -3,19 +3,14 @@
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { NaverBlogPost } from '@/lib/naver-blog';
+import {
+  isTrustedNaverBlogThumbUrl,
+  NAVER_IMAGE_HOSTS_FOR_NEXT_IMAGE,
+} from '@/lib/naver-blog-thumb-url';
 
-const NAVER_IMAGE_HOSTS = new Set([
-  'blogfiles.pstatic.net',
-  'postfiles.pstatic.net',
-  'dthumb-phinf.pstatic.net',
-  'mblogthumb-phinf.pstatic.net',
-  'cafeptthumb-phinf.pstatic.net',
-  'shop-phinf.pstatic.net',
-]);
-
-function isNaverCdnImage(url: string): boolean {
+function useNextImageOptimization(url: string): boolean {
   try {
-    return NAVER_IMAGE_HOSTS.has(new URL(url).hostname);
+    return NAVER_IMAGE_HOSTS_FOR_NEXT_IMAGE.has(new URL(url).hostname.toLowerCase());
   } catch {
     return false;
   }
@@ -46,7 +41,7 @@ function BlogThumb({
   return (
     <div className="mb-3 overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
       <div className="relative aspect-[4/3] w-full">
-        {post.imageUrl && isNaverCdnImage(post.imageUrl) ? (
+        {post.imageUrl && useNextImageOptimization(post.imageUrl) ? (
           <Image
             src={post.imageUrl}
             alt={alt}
@@ -57,8 +52,8 @@ function BlogThumb({
             quality={75}
             referrerPolicy="no-referrer"
           />
-        ) : post.imageUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
+        ) : post.imageUrl && isTrustedNaverBlogThumbUrl(post.imageUrl) ? (
+          // eslint-disable-next-line @next/next/no-img-element -- *.pstatic.net 등 허용 호스트
           <img
             src={post.imageUrl}
             alt={alt}

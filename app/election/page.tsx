@@ -1,5 +1,21 @@
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
 
+const ELECTION_FEATURES = [
+  { title: '당일 제작 가능', desc: '급하신 분들도 당일 제작으로 맞춰드립니다.' },
+  {
+    title: '소량 주문 가능',
+    desc: '소량부터 대량까지, 부담 없이 문의하세요.',
+  },
+  {
+    title: '10년 제작 경험',
+    desc: '오랜시간 회장, 부회장, 반장을 만들어 온 경험으로 제작해드립니다.',
+  },
+  {
+    title: '다양한 소품 및 아이디어',
+    desc: '학교에 맞게, 학생에 맞게, 다양한 아이디어를 공유합니다.',
+  },
+];
+
 const FAQ = [
   {
     q: '선거용품도 당일 제작이 가능한가요?',
@@ -35,14 +51,39 @@ export default function ElectionPage() {
     <ServicePageLayout
       title="선거용품"
       subtitle="선거용품"
-      description="선거 관련 인쇄물·굿즈가 필요하시면 편하게 문의해 주세요."
+      heroTitleAccent
+      description={
+        <>
+          <div className="space-y-2 sm:space-y-2.5">
+            <p className="text-lg font-extrabold leading-tight tracking-tight text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.65)] sm:text-xl sm:leading-snug md:text-[1.5rem] md:leading-snug">
+              “선거 준비, 어디 맡기실지 고민되시나요?”
+            </p>
+            <p className="text-lg font-extrabold leading-tight tracking-tight text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.65)] sm:text-xl sm:leading-snug md:text-[1.5rem] md:leading-snug">
+              “회장·부회장을 만들어온 선택, 지금도 이어지고 있습니다”
+            </p>
+            <p className="pt-0.5 text-base font-extrabold leading-snug text-orange-400 [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.85))] sm:text-lg sm:pt-1">
+              지금 문의하면 바로 제작 진행됩니다
+            </p>
+          </div>
+          <div className="mt-4 border-t border-white/30 pt-4 text-white sm:mt-5 sm:pt-4">
+            <p className="text-base font-normal leading-relaxed text-white/95 sm:text-lg">
+              전국 제작 · 퀵 발송 대응
+            </p>
+            <p className="mt-1.5 text-base font-normal leading-relaxed text-white/90 sm:mt-2 sm:text-lg">
+              다양한 선거용품 빠르게 당일 제작
+            </p>
+          </div>
+        </>
+      }
+      heroVideo={{ src: '/election-hero-video.mp4' }}
+      featureItems={ELECTION_FEATURES}
       packages={PACKAGES}
       faqTitle="선거용품 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
-        { title: '선거 현수막' },
-        { title: '선거 배너' },
-        { title: '명함·전단 세트' },
+      portfolioGroups={[
+        { groupTitle: '포스터 시안', items: [{ title: '선거 현수막' }] },
+        { groupTitle: '피켓 시안', items: [{ title: '선거 배너' }] },
+        { groupTitle: '용품 시안', items: [{ title: '명함·전단 세트' }] },
       ]}
     />
   );

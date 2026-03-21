@@ -9,7 +9,7 @@ const CATEGORIES = [
   { href: '/card', label: '명함', emoji: '📇' },
   { href: '/goods', label: '굿즈', emoji: '🎁' },
   { href: '/election', label: '선거용품', emoji: '🗳️' },
-  { href: '/another', label: '기타', emoji: '✨' },
+  { href: '/another', label: '각종 인쇄물', emoji: '✨' },
 ];
 
 export default function CategoryGrid() {

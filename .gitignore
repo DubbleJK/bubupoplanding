@@ -5,6 +5,7 @@ node_modules
 # build
 .next
 out
+*.tsbuildinfo
 # env
 .env
 .env.local

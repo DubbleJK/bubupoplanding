@@ -252,7 +252,7 @@ export default function DtfGuidePage() {
               rel="noopener noreferrer"
               className="inline-flex flex-1 items-center justify-center rounded-2xl bg-[#FEE500] px-5 py-3 text-sm font-bold text-[#191919] transition hover:opacity-90"
             >
-              카톡으로 파일 문의하기
+              카카오톡으로 문의하기
             </a>
           </div>
         </div>

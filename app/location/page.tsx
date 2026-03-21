@@ -189,13 +189,13 @@ export default function LocationPage() {
                 rel="noopener noreferrer"
                 className="flex min-h-[3.25rem] flex-1 items-center justify-center rounded-2xl bg-[#FEE500] py-4 text-base font-bold text-[#191919] transition hover:opacity-90"
               >
-                카카오톡 문의
+                카카오톡으로 문의하기
               </a>
               <a
-                className="flex min-h-[3.25rem] flex-1 items-center justify-center rounded-2xl bg-primary py-4 text-base font-bold text-white transition hover:bg-primary-hover"
+                className="flex min-h-[3.25rem] flex-1 items-center justify-center rounded-2xl border-2 border-gray-900 bg-white py-4 text-base font-bold text-gray-900 transition hover:bg-gray-50"
                 href={`tel:${PHONE.replace(/-/g, '')}`}
               >
-                전화 문의하기
+                전화로 문의하기
               </a>
             </div>
             <p className="text-center">

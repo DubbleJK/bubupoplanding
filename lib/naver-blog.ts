@@ -1,3 +1,5 @@
+import { isTrustedNaverBlogThumbUrl } from '@/lib/naver-blog-thumb-url';
+
 export type NaverBlogPost = {
   title: string;
   link: string;
@@ -64,8 +66,7 @@ function parseRssItems(xml: string, maxCount: number): NaverBlogPost[] {
       const m = description.match(/<img[^>]+src=["']([^"']+)["']/i);
       if (!m) return undefined;
       const url = m[1].trim();
-      // 기본적인 안전 필터: http/https만 허용
-      if (!/^https?:\/\//i.test(url)) return undefined;
+      if (!isTrustedNaverBlogThumbUrl(url)) return undefined;
       return url;
     })();
 
