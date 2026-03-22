@@ -52,15 +52,15 @@ export default function PackageSection({
     <section className="section section-muted">
       <div className="container">
         <h2 className="section-title">추천 패키지</h2>
-        <p className="section-desc">
+        <p className="section-desc max-w-2xl">
           {isHome ? (
             <>
-              자주 찾는 구성의 참고 금액(~)입니다. 정확한 견적은 카톡 문의 시 사양에 맞춰
-              안내드립니다.
+              자주 문의 주시는 구성의 <strong className="font-semibold text-gray-700">참고 금액(~)</strong>
+              입니다. 사양에 맞는 정확한 견적은 카톡으로 보내주시면 바로 안내드립니다.
             </>
           ) : (
             <>
-              인쇄 크기, 수량에 따라 견적이 확정되며, 대량 주문 시 추가 할인이 됩니다.
+              인쇄 크기·수량에 따라 견적이 확정됩니다. 대량·반복 주문은 별도 협의 가능합니다.
             </>
           )}
         </p>
@@ -85,16 +85,18 @@ export default function PackageSection({
                       </span>
                     ) : null}
                   </h3>
-                  <div className="mt-1 text-sm text-gray-600">{desc}</div>
+                  <div className="mt-1 text-[14px] leading-relaxed text-gray-600 text-pretty sm:text-sm">
+                    {desc}
+                  </div>
                 </div>
               </div>
               <a
                 href={KAKAO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 shrink-0 rounded-2xl bg-primary px-6 py-3 text-center font-bold text-white transition hover:bg-primary-hover sm:mt-0"
+                className="mt-4 min-h-[48px] shrink-0 rounded-2xl bg-primary px-6 py-3 text-center text-[15px] font-bold text-white transition hover:bg-primary-hover sm:mt-0 sm:min-h-0 sm:self-center"
               >
-                카카오톡으로 문의하기
+                이 구성으로 문의하기
               </a>
             </div>
           ))}

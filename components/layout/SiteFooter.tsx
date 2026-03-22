@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-const BRAND = 'BUBUPOP';
+/** 고객-facing 표기 (저작권 등) */
+const BRAND = '부부피오피';
 
 export default function SiteFooter() {
   const regNo = process.env.NEXT_PUBLIC_BUSINESS_REG_NO?.trim();

@@ -15,7 +15,16 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-pretendard)', 'system-ui', 'sans-serif'],
+        /** --font-pretendard 미설정 시에도 한글 가독성 유지 */
+        sans: [
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Apple SD Gothic Neo',
+          'Malgun Gothic',
+          'sans-serif',
+        ],
       },
     },
   },

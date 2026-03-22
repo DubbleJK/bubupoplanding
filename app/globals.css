@@ -19,9 +19,9 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
-/* 섹션 제목: 직관적 가독 */
+/* 섹션 제목: 모바일 줄바꿈·균형 */
 .section-title {
-  @apply text-xl font-bold tracking-tight text-gray-900 sm:text-2xl;
+  @apply text-xl font-bold tracking-tight text-gray-900 text-balance sm:text-2xl;
 }
 
 /* 섹션 공통: 간격/정렬 통일 */
@@ -42,7 +42,7 @@ body {
 }
 
 .section-desc {
-  @apply mt-2 text-gray-600;
+  @apply mt-2 text-[15px] leading-relaxed text-gray-600 text-pretty sm:text-base;
 }
 
 /* 하단 고정 CTA 공간 확보 */

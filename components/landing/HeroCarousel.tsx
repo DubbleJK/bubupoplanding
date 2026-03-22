@@ -54,14 +54,14 @@ export default function HeroCarousel({ slides }: Props) {
                   </div>
 
                   {i === 0 ? (
-                    <h1 className="mt-2 max-w-[98%] text-[1.485rem] font-black leading-[1.15] tracking-tight text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] sm:mt-4 sm:max-w-none sm:text-3xl sm:leading-[1.1] md:text-4xl lg:text-5xl">
+                    <h1 className="mt-2 max-w-[98%] text-[1.485rem] font-black leading-[1.15] tracking-tight text-white text-pretty drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] sm:mt-4 sm:max-w-none sm:text-3xl sm:leading-[1.1] md:text-4xl lg:text-5xl">
                       <span className="block">{s.titleLines.top}</span>
                       <span className="mt-1 block text-primary drop-shadow-[0_1px_10px_rgba(0,0,0,0.65)] sm:mt-2 sm:drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
                         {s.titleLines.highlight}
                       </span>
                     </h1>
                   ) : (
-                    <h2 className="mt-2 max-w-[98%] text-[1.485rem] font-black leading-[1.15] tracking-tight text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] sm:mt-4 sm:max-w-none sm:text-3xl sm:leading-[1.1] md:text-4xl lg:text-5xl">
+                    <h2 className="mt-2 max-w-[98%] text-[1.485rem] font-black leading-[1.15] tracking-tight text-white text-pretty drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)] sm:mt-4 sm:max-w-none sm:text-3xl sm:leading-[1.1] md:text-4xl lg:text-5xl">
                       <span className="block">{s.titleLines.top}</span>
                       <span className="mt-1 block text-primary drop-shadow-[0_1px_10px_rgba(0,0,0,0.65)] sm:mt-2 sm:drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
                         {s.titleLines.highlight}
@@ -70,7 +70,7 @@ export default function HeroCarousel({ slides }: Props) {
                   )}
 
                   <p
-                    className="mt-2 max-w-[98%] text-sm font-bold leading-snug text-amber-100 [text-shadow:0_0_10px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:mt-3 sm:max-w-none sm:text-base sm:font-semibold sm:text-white sm:[text-shadow:0_1px_8px_rgba(0,0,0,0.45)]"
+                    className="mt-2 max-w-[98%] text-sm font-bold leading-snug text-amber-100 text-pretty [text-shadow:0_0_10px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.95)] sm:mt-3 sm:max-w-none sm:text-base sm:font-semibold sm:text-white sm:[text-shadow:0_1px_8px_rgba(0,0,0,0.45)]"
                   >
                     {s.subtitle}
                   </p>

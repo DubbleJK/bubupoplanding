@@ -119,7 +119,9 @@ export default function ReviewSection() {
             ★ 5.0
           </span>
         </div>
-        <p className="section-desc">실제 주문·이용 후 남겨주신 리뷰입니다.</p>
+        <p className="section-desc max-w-2xl">
+          실제 주문·이용 후 남겨주신 후기입니다. 모바일에서는 옆으로 넘겨 더 보실 수 있습니다.
+        </p>
 
         <div className="relative -mx-4 mt-8">
           <div ref={emblaRef} className="overflow-hidden px-4 pb-2">
@@ -145,7 +147,7 @@ export default function ReviewSection() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-[15px] leading-relaxed text-gray-800">
+                  <p className="mt-4 text-[15px] leading-relaxed text-gray-800 text-pretty">
                     {text}
                   </p>
 

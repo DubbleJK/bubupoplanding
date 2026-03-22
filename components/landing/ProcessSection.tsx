@@ -10,7 +10,9 @@ export default function ProcessSection() {
     <section className="section bg-white">
       <div className="container">
         <h2 className="section-title">주문 방법</h2>
-        <p className="section-desc">4단계로 간단히 진행됩니다.</p>
+        <p className="section-desc max-w-2xl">
+          카톡·전화로 요청만 주시면, 확인부터 출고까지 단계별로 안내해 드립니다.
+        </p>
 
         {/* 모바일: 번호 + 카드 한 줄, 단계 사이 연결선 */}
         <ol

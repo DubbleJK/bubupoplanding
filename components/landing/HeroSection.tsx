@@ -51,13 +51,13 @@ export default function HeroSection() {
             href={KAKAO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center rounded-2xl bg-[#FEE500] py-4 text-base font-bold text-[#191919] transition hover:opacity-90"
+            className="flex min-h-[52px] flex-1 items-center justify-center rounded-2xl bg-[#FEE500] px-3 py-4 text-[15px] font-bold leading-tight text-[#191919] transition hover:opacity-90 sm:text-base"
           >
             카카오톡으로 문의하기
           </a>
           <a
             href={`tel:${PHONE.replace(/-/g, '')}`}
-            className="flex flex-1 items-center justify-center rounded-2xl border-2 border-gray-900 bg-white py-4 text-base font-bold text-gray-900 transition hover:bg-gray-50"
+            className="flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border-2 border-gray-900 bg-white px-3 py-4 text-[15px] font-bold leading-tight text-gray-900 transition hover:bg-gray-50 sm:text-base"
           >
             전화로 문의하기
           </a>

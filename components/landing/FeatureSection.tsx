@@ -24,28 +24,32 @@ type Props = {
 
 export default function FeatureSection({
   items = DEFAULT_FEATURES,
-  subheading = '속도·품질·맞춤까지 한 번에 챙깁니다.',
+  subheading = '당일·소량·경험을 바탕으로, 문의부터 출고까지 빠르게 이어집니다.',
 }: Props) {
   return (
     <section className="section bg-white">
       <div className="container">
-        <h2 className="section-title">부부피오피 강점</h2>
-        <p className="section-desc">{subheading}</p>
+        <h2 className="section-title">왜 부부피오피인가요</h2>
+        <p className="section-desc max-w-2xl">{subheading}</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {items.map(({ title, desc }, i) => (
             <div
               key={`${title}-${i}`}
-              className="flex gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="flex gap-4 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm sm:p-5"
             >
               <span
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-lg font-bold text-white"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-base font-bold text-white sm:h-10 sm:w-10 sm:text-lg"
                 aria-hidden
               >
                 ✓
               </span>
-              <div>
-                <h3 className="font-bold text-gray-900">{title}</h3>
-                <p className="mt-1 text-sm text-gray-600">{desc}</p>
+              <div className="min-w-0">
+                <h3 className="text-[15px] font-bold leading-snug text-gray-900 sm:text-base">
+                  {title}
+                </h3>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-gray-600 text-pretty sm:text-sm">
+                  {desc}
+                </p>
               </div>
             </div>
           ))}

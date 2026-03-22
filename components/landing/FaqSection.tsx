@@ -51,13 +51,15 @@ export default function FaqSection({
             >
               <button
                 type="button"
-                className="flex w-full items-center justify-between px-5 py-4 text-left font-bold text-gray-900"
+                className="flex w-full items-start justify-between gap-3 px-4 py-4 text-left sm:px-5"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 aria-expanded={openIndex === i}
               >
-                <span>{q}</span>
+                <span className="min-w-0 flex-1 text-[15px] font-bold leading-snug text-gray-900 text-pretty sm:text-base">
+                  {q}
+                </span>
                 <span
-                  className={`shrink-0 text-lg text-orange-400 transition-transform drop-shadow-sm ${
+                  className={`mt-0.5 shrink-0 text-lg leading-none text-orange-400 transition-transform drop-shadow-sm ${
                     openIndex === i ? 'rotate-180' : ''
                   }`}
                   aria-hidden
@@ -71,7 +73,7 @@ export default function FaqSection({
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="border-t border-gray-100 px-5 pb-4 pt-2 text-sm text-gray-600">
+                  <div className="border-t border-gray-100 px-4 pb-4 pt-3 text-[15px] leading-relaxed text-gray-600 text-pretty sm:px-5 sm:text-sm">
                     {typeof a === 'string' ? (
                       <p>{a}</p>
                     ) : (

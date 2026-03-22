@@ -26,7 +26,7 @@ export default function DraftShowcaseSection({
     <section className="border-t border-gray-200 bg-gray-50 px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-4xl">
         <h2 className="section-title">시안 모음</h2>
-        <p className="section-desc mx-auto max-w-2xl">
+        <p className="section-desc mx-auto max-w-2xl text-center sm:text-left">
           {showClientDesignsCta ? (
             <>
               다양한 제작 사례와 시안을 참고하실 수 있습니다. 결제가 완료된 고객님은

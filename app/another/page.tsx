@@ -1,5 +1,8 @@
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
 
+const KAKAO_URL =
+  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
+
 const FAQ = [
   {
     q: '원하는 품목도 당일 제작이 가능한가요?',
@@ -19,15 +22,10 @@ const FAQ = [
   },
 ];
 
-const PACKAGES = [
-  { title: '각종 인쇄물 소량', desc: '당일 제작 가능', tag: '인기' as const },
-  { title: '각종 인쇄물 기본', desc: '문의 후 견적', tag: null },
-  { title: '맞춤 제작', desc: '원하시는 형태 문의', tag: null },
-];
-
 export const metadata = {
   title: '각종 인쇄물 제작 | 부부피오피',
-  description: '다양한 굿즈·인쇄물 소량·당일 제작. 부부피오피에 문의해 주세요.',
+  description:
+    '각종 인쇄물·홍보물 소량·당일 제작. 한 곳에서 용도에 맞게 제작. 부부피오피에 문의해 주세요.',
 };
 
 export default function AnotherPage() {
@@ -35,8 +33,57 @@ export default function AnotherPage() {
     <ServicePageLayout
       title="각종 인쇄물"
       subtitle="각종 인쇄물"
-      description="스티커, 티셔츠, 명함 외 원하시는 굿즈나 인쇄물이 있으시면 편하게 문의해 주세요."
-      packages={PACKAGES}
+      heroTitleAccent
+      description={
+        <>
+          <div className="space-y-2 sm:space-y-2.5">
+            <p className="text-lg font-extrabold leading-tight tracking-tight text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.65)] sm:text-xl sm:leading-snug md:text-[1.5rem] md:leading-snug">
+              “인쇄물, 어디 맡겨야 할지 고민되시나요?”
+            </p>
+            <p className="text-lg font-extrabold leading-tight tracking-tight text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.65)] sm:text-xl sm:leading-snug md:text-[1.5rem] md:leading-snug">
+              “여기 하나면 전부 제작됩니다”
+            </p>
+            <p className="pt-0.5 text-base font-extrabold leading-snug text-orange-400 [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.85))] sm:text-lg sm:pt-1">
+              지금 문의하면 바로 제작 진행됩니다
+            </p>
+          </div>
+          <div className="mt-4 border-t border-white/30 pt-4 text-white sm:mt-5 sm:pt-4">
+            <p className="text-base font-normal leading-relaxed text-white/95 sm:text-lg">
+              각종 인쇄물 · 홍보물 제작 가능
+            </p>
+            <p className="mt-1.5 text-base font-normal leading-relaxed text-white/90 sm:mt-2 sm:text-lg">
+              용도에 맞게 한 번에 제작해드립니다
+            </p>
+          </div>
+        </>
+      }
+      hidePackages
+      afterPackages={
+        <section className="section section-muted pt-0">
+          <div className="container">
+            <div className="mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm sm:p-8">
+              <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+                <span className="block">여러 인쇄물, 따로 맡길 필요 없습니다</span>
+                <span className="mt-1 block">한 번에 제작하고 한 번에 관리하세요</span>
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-gray-700 sm:text-lg">
+                <span className="block">품목별로 업체를 나눌 필요 없이</span>
+                <span className="mt-1 block">
+                  필요한 인쇄물을 한 곳에서 효율적으로 진행해드립니다
+                </span>
+              </p>
+              <a
+                href={KAKAO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex min-h-[52px] items-center justify-center rounded-2xl bg-[#FEE500] px-8 py-3 text-base font-extrabold text-[#191919] transition hover:opacity-90 sm:mt-6"
+              >
+                카카오톡으로 문의하기
+              </a>
+            </div>
+          </div>
+        </section>
+      }
       faqTitle="각종 인쇄물 제작 FAQ"
       faqItems={FAQ}
       portfolioGroups={[
