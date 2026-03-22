@@ -80,6 +80,7 @@ export default function ElectionPage() {
       packages={PACKAGES}
       faqTitle="선거용품 FAQ"
       faqItems={FAQ}
+      showClientDesignsCta
       portfolioGroups={[
         { groupTitle: '포스터 시안', items: [{ title: '선거 현수막' }] },
         { groupTitle: '피켓 시안', items: [{ title: '선거 배너' }] },

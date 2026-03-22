@@ -44,6 +44,8 @@ type ServicePageLayoutProps = {
   packagesBelowNote?: string;
   /** true면 추천 패키지 섹션 숨김 */
   hidePackages?: boolean;
+  /** true면 시안 모음 하단에 결제 고객 전용(/client-designs) 버튼 표시 — 선거용품만 true 권장 */
+  showClientDesignsCta?: boolean;
 };
 
 const DEFAULT_PACKAGES: ServicePackage[] = [
@@ -70,6 +72,7 @@ export default function ServicePageLayout({
   featureSubheading,
   packagesBelowNote,
   hidePackages = false,
+  showClientDesignsCta = false,
 }: ServicePageLayoutProps) {
   const draftGroups =
     portfolioGroups ??
@@ -91,7 +94,10 @@ export default function ServicePageLayout({
       />
       {children}
       {draftGroups.length > 0 ? (
-        <DraftShowcaseSection groups={draftGroups} />
+        <DraftShowcaseSection
+          groups={draftGroups}
+          showClientDesignsCta={showClientDesignsCta}
+        />
       ) : null}
       {!hidePackages ? (
         <PackageSection
