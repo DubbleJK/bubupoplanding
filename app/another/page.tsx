@@ -39,10 +39,15 @@ export default function AnotherPage() {
       packages={PACKAGES}
       faqTitle="각종 인쇄물 제작 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
-        { title: '맞춤 굿즈 세트' },
-        { title: '소량 기념 굿즈' },
-        { title: '각종 인쇄물' },
+      portfolioGroups={[
+        {
+          groupTitle: '',
+          items: [
+            { title: '맞춤 굿즈 세트' },
+            { title: '소량 기념 굿즈' },
+            { title: '각종 인쇄물' },
+          ],
+        },
       ]}
     />
   );

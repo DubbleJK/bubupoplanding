@@ -101,18 +101,23 @@ export default function GoodsPage() {
       }
       faqTitle="굿즈 제작 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
+      portfolioGroups={[
         {
-          title: '아크릴 키링',
-          imageSrc: '/images/portfolio-goods-acrylic-keyring.png',
-        },
-        {
-          title: '볼펜 인쇄',
-          imageSrc: '/images/portfolio-goods-pen-print.png',
-        },
-        {
-          title: '냉장고 자석',
-          imageSrc: '/images/portfolio-goods-fridge-magnet.png',
+          groupTitle: '',
+          items: [
+            {
+              title: '아크릴 키링',
+              imageSrc: '/images/portfolio-goods-acrylic-keyring.png',
+            },
+            {
+              title: '볼펜 인쇄',
+              imageSrc: '/images/portfolio-goods-pen-print.png',
+            },
+            {
+              title: '냉장고 자석',
+              imageSrc: '/images/portfolio-goods-fridge-magnet.png',
+            },
+          ],
         },
       ]}
     />

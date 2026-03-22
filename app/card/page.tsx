@@ -103,26 +103,31 @@ export default function CardPage() {
       packages={PACKAGES}
       faqTitle="명함 제작 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
+      portfolioGroups={[
         {
-          title: '상가 명함',
-          imageSrc: '/images/portfolio-card-shopping.png',
-        },
-        {
-          title: '학교 명함',
-          imageSrc: '/images/portfolio-card-school.png',
-        },
-        {
-          title: '부동산 명함',
-          imageSrc: '/images/portfolio-card-realestate.png',
-        },
-        {
-          title: '경호 업체 명함',
-          imageSrc: '/images/portfolio-card-security.png',
-        },
-        {
-          title: '병원 명함',
-          imageSrc: '/images/portfolio-card-hospital.png',
+          groupTitle: '',
+          items: [
+            {
+              title: '상가 명함',
+              imageSrc: '/images/portfolio-card-shopping.png',
+            },
+            {
+              title: '학교 명함',
+              imageSrc: '/images/portfolio-card-school.png',
+            },
+            {
+              title: '부동산 명함',
+              imageSrc: '/images/portfolio-card-realestate.png',
+            },
+            {
+              title: '경호 업체 명함',
+              imageSrc: '/images/portfolio-card-security.png',
+            },
+            {
+              title: '병원 명함',
+              imageSrc: '/images/portfolio-card-hospital.png',
+            },
+          ],
         },
       ]}
     />

@@ -75,26 +75,31 @@ export default function BannerPage() {
       packages={PACKAGES}
       faqTitle="배너·현수막 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
+      portfolioGroups={[
         {
-          title: '행사 배너',
-          imageSrc: '/images/portfolio-banner-event.png',
-        },
-        {
-          title: '정육점 배너',
-          imageSrc: '/images/portfolio-banner-butcher.png',
-        },
-        {
-          title: '상가 배너',
-          imageSrc: '/images/portfolio-banner-store.png',
-        },
-        {
-          title: '카페 배너',
-          imageSrc: '/images/portfolio-banner-cafe.png',
-        },
-        {
-          title: '대량 배너',
-          imageSrc: '/images/portfolio-banner-bulk.png',
+          groupTitle: '',
+          items: [
+            {
+              title: '행사 배너',
+              imageSrc: '/images/portfolio-banner-event.png',
+            },
+            {
+              title: '정육점 배너',
+              imageSrc: '/images/portfolio-banner-butcher.png',
+            },
+            {
+              title: '상가 배너',
+              imageSrc: '/images/portfolio-banner-store.png',
+            },
+            {
+              title: '카페 배너',
+              imageSrc: '/images/portfolio-banner-cafe.png',
+            },
+            {
+              title: '대량 배너',
+              imageSrc: '/images/portfolio-banner-bulk.png',
+            },
+          ],
         },
       ]}
     />

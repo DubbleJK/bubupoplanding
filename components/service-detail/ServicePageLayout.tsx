@@ -28,7 +28,7 @@ type ServicePageLayoutProps = {
   afterPackages?: ReactNode;
   packages?: ServicePackage[];
   portfolioItems?: ServicePortfolioItem[];
-  /** 있으면 A/B/C 시안 구성을 직접 지정 (없으면 portfolioItems를 자동 분배) */
+  /** 있으면 시안 그룹을 직접 지정 (없고 portfolioItems만 있으면 A/B/C로 자동 분배) */
   portfolioGroups?: ServicePortfolioGroup[];
   /** 영상·이미지 히어로 (영상 시 poster로 첫 화면) */
   heroImage?: PageHeroImage;

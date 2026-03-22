@@ -108,18 +108,23 @@ export default function DtfPage() {
       }
       faqTitle="DTF 출력 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
+      portfolioGroups={[
         {
-          title: '다양한 소재',
-          imageSrc: '/images/portfolio-dtf-다양한-소재.png',
-        },
-        {
-          title: '90cm대용량 폭',
-          imageSrc: '/images/portfolio-dtf-90cm-대용량-폭.png',
-        },
-        {
-          title: '정확한 핀',
-          imageSrc: '/images/portfolio-dtf-정확한-핀.png',
+          groupTitle: '',
+          items: [
+            {
+              title: '다양한 소재',
+              imageSrc: '/images/portfolio-dtf-다양한-소재.png',
+            },
+            {
+              title: '90cm대용량 폭',
+              imageSrc: '/images/portfolio-dtf-90cm-대용량-폭.png',
+            },
+            {
+              title: '정확한 핀',
+              imageSrc: '/images/portfolio-dtf-정확한-핀.png',
+            },
+          ],
         },
       ]}
     />

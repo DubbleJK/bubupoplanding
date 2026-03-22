@@ -100,10 +100,15 @@ export default function UvStickerPage() {
       packagesBelowNote={PACKAGES_BELOW_NOTE}
       faqTitle="UV 스티커 제작 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
-        { title: '매장 유리창 UV' },
-        { title: '아크릴 표지 UV' },
-        { title: '소량 프로모 스티커' },
+      portfolioGroups={[
+        {
+          groupTitle: '',
+          items: [
+            { title: '매장 유리창 UV' },
+            { title: '아크릴 표지 UV' },
+            { title: '소량 프로모 스티커' },
+          ],
+        },
       ]}
     />
   );

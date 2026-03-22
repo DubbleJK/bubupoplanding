@@ -121,38 +121,43 @@ export default function StickerPage() {
       packages={PACKAGES}
       faqTitle="스티커 제작 FAQ"
       faqItems={STICKER_FAQ}
-      portfolioItems={[
+      portfolioGroups={[
         {
-          title: '동호회 스티커',
-          imageSrc: '/images/portfolio-club-sticker.png',
-        },
-        {
-          title: '성분표 스티커',
-          imageSrc: '/images/portfolio-seongbun-sticker.png',
-        },
-        {
-          title: '다꾸 스티커',
-          imageSrc: '/images/portfolio-dakku-sticker.png',
-        },
-        {
-          title: '조공스티커',
-          imageSrc: '/images/portfolio-jogong-sticker.png',
-        },
-        {
-          title: '라벨 스티커',
-          imageSrc: '/images/portfolio-label-sticker.png',
-        },
-        {
-          title: '행사 스티커',
-          imageSrc: '/images/portfolio-event-sticker.png',
-        },
-        {
-          title: '수출입원산지스티커',
-          imageSrc: '/images/portfolio-origin-sticker.png',
-        },
-        {
-          title: '테이블시트 스티커',
-          imageSrc: '/images/portfolio-table-sheet-sticker.png',
+          groupTitle: '',
+          items: [
+            {
+              title: '동호회 스티커',
+              imageSrc: '/images/portfolio-club-sticker.png',
+            },
+            {
+              title: '성분표 스티커',
+              imageSrc: '/images/portfolio-seongbun-sticker.png',
+            },
+            {
+              title: '다꾸 스티커',
+              imageSrc: '/images/portfolio-dakku-sticker.png',
+            },
+            {
+              title: '조공스티커',
+              imageSrc: '/images/portfolio-jogong-sticker.png',
+            },
+            {
+              title: '라벨 스티커',
+              imageSrc: '/images/portfolio-label-sticker.png',
+            },
+            {
+              title: '행사 스티커',
+              imageSrc: '/images/portfolio-event-sticker.png',
+            },
+            {
+              title: '수출입원산지스티커',
+              imageSrc: '/images/portfolio-origin-sticker.png',
+            },
+            {
+              title: '테이블시트 스티커',
+              imageSrc: '/images/portfolio-table-sheet-sticker.png',
+            },
+          ],
         },
       ]}
     />

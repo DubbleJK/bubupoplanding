@@ -288,38 +288,43 @@ export default function TshirtPage() {
       packages={PACKAGES}
       faqTitle="단체티 제작 FAQ"
       faqItems={FAQ}
-      portfolioItems={[
+      portfolioGroups={[
         {
-          title: '기업 행사 단체복',
-          imageSrc: '/images/portfolio-tshirt-corporate-event.png',
-        },
-        {
-          title: '오토바이 단체 티셔츠',
-          imageSrc: '/images/portfolio-tshirt-motorcycle.png',
-        },
-        {
-          title: '가족 티셔츠',
-          imageSrc: '/images/portfolio-tshirt-family.png',
-        },
-        {
-          title: '작업조끼',
-          imageSrc: '/images/portfolio-tshirt-work-vest.png',
-        },
-        {
-          title: '행사티셔츠',
-          imageSrc: '/images/portfolio-tshirt-event.png',
-        },
-        {
-          title: '가게유니폼',
-          imageSrc: '/images/portfolio-tshirt-shop-uniform.png',
-        },
-        {
-          title: '소량기념티셔츠',
-          imageSrc: '/images/portfolio-tshirt-small-batch.png',
-        },
-        {
-          title: '행사조끼',
-          imageSrc: '/images/portfolio-tshirt-event-vest.png',
+          groupTitle: '',
+          items: [
+            {
+              title: '기업 행사 단체복',
+              imageSrc: '/images/portfolio-tshirt-corporate-event.png',
+            },
+            {
+              title: '오토바이 단체 티셔츠',
+              imageSrc: '/images/portfolio-tshirt-motorcycle.png',
+            },
+            {
+              title: '가족 티셔츠',
+              imageSrc: '/images/portfolio-tshirt-family.png',
+            },
+            {
+              title: '작업조끼',
+              imageSrc: '/images/portfolio-tshirt-work-vest.png',
+            },
+            {
+              title: '행사티셔츠',
+              imageSrc: '/images/portfolio-tshirt-event.png',
+            },
+            {
+              title: '가게유니폼',
+              imageSrc: '/images/portfolio-tshirt-shop-uniform.png',
+            },
+            {
+              title: '소량기념티셔츠',
+              imageSrc: '/images/portfolio-tshirt-small-batch.png',
+            },
+            {
+              title: '행사조끼',
+              imageSrc: '/images/portfolio-tshirt-event-vest.png',
+            },
+          ],
         },
       ]}
     />
