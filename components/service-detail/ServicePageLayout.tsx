@@ -44,7 +44,7 @@ type ServicePageLayoutProps = {
   packagesBelowNote?: string;
   /** true면 추천 패키지 섹션 숨김 */
   hidePackages?: boolean;
-  /** true면 시안 모음 하단에 결제 고객 전용(/client-designs) 버튼 표시 — 선거용품만 true 권장 */
+  /** true면 「시안 모음」+ 결제 고객 전용(/client-designs) 버튼 — 선거용품만 true 권장. 그 외 페이지는 「제작 사례」 */
   showClientDesignsCta?: boolean;
 };
 

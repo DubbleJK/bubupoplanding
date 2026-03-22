@@ -22,18 +22,24 @@ export default function DraftShowcaseSection({
   groups,
   showClientDesignsCta = false,
 }: Props) {
+  const heading = showClientDesignsCta ? '시안 모음' : '제작 사례';
+
   return (
     <section className="border-t border-gray-200 bg-gray-50 px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-4xl">
-        <h2 className="section-title">시안 모음</h2>
+        <h2 className="section-title">{heading}</h2>
         <p className="section-desc mx-auto max-w-2xl text-center sm:text-left">
           {showClientDesignsCta ? (
             <>
-              다양한 제작 사례와 시안을 참고하실 수 있습니다. 결제가 완료된 고객님은
-              아래 버튼으로 추가 시안을 확인하실 수 있습니다.
+              포스터·피켓·용품 등 <strong className="font-semibold text-gray-700">공개 시안 방향</strong>을
+              참고하실 수 있습니다. 결제가 완료된 고객님은 아래 버튼으로{' '}
+              <strong className="font-semibold text-gray-700">추가 시안</strong>을 확인하실 수 있습니다.
             </>
           ) : (
-            <>다양한 제작 사례와 시안을 참고하실 수 있습니다.</>
+            <>
+              실제 진행했던 <strong className="font-semibold text-gray-700">작업 사진</strong>을 모았습니다.
+              비슷한 구성이 필요하시면 카톡으로 레퍼런스로 알려주시면 됩니다.
+            </>
           )}
         </p>
 
