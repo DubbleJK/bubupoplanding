@@ -73,9 +73,24 @@ const STICKER_FAQ = [
 ];
 
 const PACKAGES = [
-  { title: '성분표 스티커', desc: '100장 · 당일 제작', tag: '인기' as const },
-  { title: '카페 스티커', desc: '소량 제작 가능', tag: null },
-  { title: '라벨 스티커', desc: '디자인 포함', tag: null },
+  {
+    title: '당일 출고 스티커',
+    price: '18,000원~',
+    desc: '사이즈: 5–7cm(한 변 기준) / 재질: 아트지·모조지 / 수량: 100매',
+    tag: '인기' as const,
+  },
+  {
+    title: '성분표·라벨 스티커',
+    price: '22,000원~',
+    desc: '사이즈: 가변(문의) / 재질: 아트지·모조지 / 수량: 100매 기준 참고',
+    tag: null,
+  },
+  {
+    title: '방수 유포지 스티커',
+    price: '32,000원~',
+    desc: '사이즈: 문의 / 재질: 유포지 / 수량: 100매 기준 참고 · 냉장·습기 환경에 적합',
+    tag: null,
+  },
 ];
 
 export const metadata = {
