@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import CategoryGrid from '@/components/landing/CategoryGrid';
 import FaqSection from '@/components/landing/FaqSection';
@@ -7,6 +8,15 @@ import PackageSection from '@/components/landing/PackageSection';
 import ProcessSection from '@/components/landing/ProcessSection';
 import ReviewSection from '@/components/landing/ReviewSection';
 import { getNaverBlogPosts } from '@/lib/naver-blog';
+import { buildPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = buildPageMetadata({
+  title: '급한 인쇄·굿즈 당일 제작',
+  description:
+    '스티커·UV·단체티·DTF·배너·명함·굿즈·선거용품까지. 소량 가능, 당일 제작 문의. 카카오톡·전화로 빠른 견적 — 부부피오피.',
+  path: '/',
+  keywords: ['부부피오피', '당일 인쇄', '급한 인쇄', '인쇄 견적'],
+});
 
 /** Embla 등 클라이언트 번들 분리 + SSR로 블로그 링크는 초기 HTML에 유지(검색·SNS) */
 const BlogLatestGrid = dynamic(

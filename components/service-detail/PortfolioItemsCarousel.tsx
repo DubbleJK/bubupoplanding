@@ -32,6 +32,7 @@ function PortfolioCard({
             fill
             className="object-cover object-center"
             sizes={sizes}
+            quality={78}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-sm text-gray-400">

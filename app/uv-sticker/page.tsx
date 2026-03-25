@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
+import { buildPageMetadata } from '@/lib/seo';
 
 const UV_FEATURES = [
   { title: '당일 제작 가능', desc: '급하신 분들도 당일 제작으로 맞춰드립니다.' },
@@ -59,11 +61,13 @@ const PACKAGES = [
 const PACKAGES_BELOW_NOTE =
   '스티커 파일 사이 간격과 전체 외곽 안쪽으로\n사방 5mm 이상의 간격을 포함해 주세요.';
 
-export const metadata = {
-  title: 'UV 스티커 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'UV 스티커 제작',
   description:
     'UV 인쇄 스티커 소량·당일 제작. 유리·아크릴 등에 강한 내구성. 부부피오피.',
-};
+  path: '/uv-sticker',
+  keywords: ['UV 스티커', '유리창 스티커', '아크릴 인쇄'],
+});
 
 export default function UvStickerPage() {
   return (

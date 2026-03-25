@@ -1,7 +1,7 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
-
-const KAKAO_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
+import { getPublicKakaoUrl } from '@/lib/contact';
+import { buildPageMetadata } from '@/lib/seo';
 
 const GOODS_FEATURES = [
   { title: '당일 제작 가능', desc: '급하신 분들도 당일 제작으로 맞춰드립니다.' },
@@ -38,11 +38,13 @@ const FAQ = [
   },
 ];
 
-export const metadata = {
-  title: '굿즈 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '굿즈 제작',
   description:
     '키링, 배지 등 굿즈 소량·당일 제작. 부부피오피가 빠르게 만들어 드립니다.',
-};
+  path: '/goods',
+  keywords: ['굿즈', '판촉물', '키링', '답례품'],
+});
 
 export default function GoodsPage() {
   return (
@@ -88,7 +90,7 @@ export default function GoodsPage() {
                 <span className="mt-1 block">원하시는 수량 기준으로 최적 단가와 일정을 제안드립니다.</span>
               </p>
               <a
-                href={KAKAO_URL}
+                href={getPublicKakaoUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex min-h-[52px] items-center justify-center rounded-2xl bg-[#FEE500] px-8 py-3 text-base font-extrabold text-[#191919] transition hover:opacity-90 sm:mt-6"

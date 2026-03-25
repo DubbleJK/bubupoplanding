@@ -1,13 +1,16 @@
+import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import AccessForm from '@/components/client-designs/AccessForm';
 import ClientDesignsAdminReveal from '@/components/client-designs/ClientDesignsAdminReveal';
 import SecretGallery from '@/components/client-designs/SecretGallery';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: '결제 고객 전용 시안 | 부부피오피',
-  description: '결제 완료 고객 전용 추가 시안 확인',
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: '결제 고객 전용 시안',
+  description: '결제 완료 고객 전용 추가 시안 확인 페이지입니다.',
+  path: '/client-designs',
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
+});
 
 export default function ClientDesignsPage() {
   const cookieStore = cookies();

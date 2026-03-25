@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
 import type { FeatureSectionItem } from '@/components/landing/FeatureSection';
+import { buildPageMetadata } from '@/lib/seo';
 
 const thCell =
   'border-b border-gray-200 bg-gray-50 px-2 py-2 text-left text-xs font-bold text-gray-900 sm:px-3 sm:text-sm';
@@ -243,11 +245,13 @@ const PACKAGES = [
   },
 ];
 
-export const metadata = {
-  title: '단체티 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '단체티 제작',
   description:
     '행사·가족 단체티 1장부터 제작. 디자인·인쇄 한 번에. 당일 가능 문의 환영. 부부피오피.',
-};
+  path: '/tshirt',
+  keywords: ['단체티', '행사 티셔츠', '가족 티셔츠', '작업복 인쇄'],
+});
 
 export default function TshirtPage() {
   return (

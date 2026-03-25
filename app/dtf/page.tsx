@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
 import type { FeatureSectionItem } from '@/components/landing/FeatureSection';
+import { buildPageMetadata } from '@/lib/seo';
 
 const DTF_FEATURES: FeatureSectionItem[] = [
   {
@@ -54,10 +56,12 @@ const PACKAGES = [
   },
 ];
 
-export const metadata = {
-  title: 'DTF 출력 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'DTF 출력',
   description: 'DTF 전사 인쇄 소량·당일 제작. 부부피오피가 빠르게 만들어 드립니다.',
-};
+  path: '/dtf',
+  keywords: ['DTF', '전사 인쇄', '티셔츠 전사'],
+});
 
 export default function DtfPage() {
   return (

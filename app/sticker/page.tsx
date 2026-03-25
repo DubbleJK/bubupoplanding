@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
+import { buildPageMetadata } from '@/lib/seo';
 
 const STICKER_FAQ = [
   {
@@ -93,11 +95,13 @@ const PACKAGES = [
   },
 ];
 
-export const metadata = {
-  title: '스티커 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '스티커 제작',
   description:
     '급한 스티커 당일 제작. 아트지·유포지 등 용도 맞춤. 납품 전·당일 출고 문의 환영. 부부피오피.',
-};
+  path: '/sticker',
+  keywords: ['스티커', '라벨', '유포지', '당일 스티커'],
+});
 
 export default function StickerPage() {
   return (

@@ -1,10 +1,10 @@
 import HeroCarousel from '@/components/landing/HeroCarousel';
-
-const KAKAO_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
-const PHONE = process.env.NEXT_PUBLIC_PHONE || '010-0000-0000';
+import { getPublicKakaoUrl, getPublicPhoneDisplay, getTelHref } from '@/lib/contact';
 
 export default function HeroSection() {
+  const kakaoUrl = getPublicKakaoUrl();
+  const phoneLabel = getPublicPhoneDisplay();
+  const telHref = getTelHref();
   return (
     <section className="relative overflow-hidden border-b border-gray-200 bg-white px-4 pb-12 pt-8 sm:pt-12">
       <div className="mx-auto max-w-4xl">
@@ -48,18 +48,20 @@ export default function HeroSection() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <a
-            href={KAKAO_URL}
+            href={kakaoUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex min-h-[52px] flex-1 items-center justify-center rounded-2xl bg-[#FEE500] px-3 py-4 text-[15px] font-bold leading-tight text-[#191919] transition hover:opacity-90 sm:text-base"
+            aria-label="카카오톡으로 무료 견적 문의하기"
           >
-            카카오톡으로 문의하기
+            카카오톡 · 무료 견적
           </a>
           <a
-            href={`tel:${PHONE.replace(/-/g, '')}`}
+            href={telHref}
             className="flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border-2 border-gray-900 bg-white px-3 py-4 text-[15px] font-bold leading-tight text-gray-900 transition hover:bg-gray-50 sm:text-base"
+            aria-label={`전화로 문의하기 ${phoneLabel}`}
           >
-            전화로 문의하기
+            전화 · 빠른 상담
           </a>
         </div>
       </div>

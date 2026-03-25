@@ -8,7 +8,7 @@ import {
   NAVER_IMAGE_HOSTS_FOR_NEXT_IMAGE,
 } from '@/lib/naver-blog-thumb-url';
 
-function useNextImageOptimization(url: string): boolean {
+function shouldUseNextImageOptimization(url: string): boolean {
   try {
     return NAVER_IMAGE_HOSTS_FOR_NEXT_IMAGE.has(new URL(url).hostname.toLowerCase());
   } catch {
@@ -41,7 +41,7 @@ function BlogThumb({
   return (
     <div className="mb-3 overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
       <div className="relative aspect-[4/3] w-full">
-        {post.imageUrl && useNextImageOptimization(post.imageUrl) ? (
+        {post.imageUrl && shouldUseNextImageOptimization(post.imageUrl) ? (
           <Image
             src={post.imageUrl}
             alt={alt}

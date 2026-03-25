@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
+import { buildPageMetadata } from '@/lib/seo';
 
 const ELECTION_FEATURES = [
   { title: '당일 제작 가능', desc: '급하신 분들도 당일 제작으로 맞춰드립니다.' },
@@ -41,10 +43,12 @@ const PACKAGES = [
   { title: '맞춤 선거용품', desc: '원하시는 품목 문의', tag: null },
 ];
 
-export const metadata = {
-  title: '선거용품 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '선거용품 제작',
   description: '선거용품 소량·당일 제작. 부부피오피에 문의해 주세요.',
-};
+  path: '/election',
+  keywords: ['선거용품', '학생회 선거', '선거 인쇄'],
+});
 
 export default function ElectionPage() {
   return (

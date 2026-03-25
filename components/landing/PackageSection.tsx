@@ -1,9 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
-
-const KAKAO_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
+import { getPublicKakaoUrl } from '@/lib/contact';
 
 export type PackageSectionItem = {
   title: string;
@@ -91,7 +89,7 @@ export default function PackageSection({
                 </div>
               </div>
               <a
-                href={KAKAO_URL}
+                href={getPublicKakaoUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 min-h-[48px] shrink-0 rounded-2xl bg-primary px-6 py-3 text-center text-[15px] font-bold text-white transition hover:bg-primary-hover sm:mt-0 sm:min-h-0 sm:self-center"

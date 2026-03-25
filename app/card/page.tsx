@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
+import { buildPageMetadata } from '@/lib/seo';
 
 const CARD_FEATURES = [
   { title: '당일 제작 가능', desc: '급하신 분들도 당일 제작으로 맞춰드립니다.' },
@@ -61,10 +63,12 @@ const PACKAGES = [
   },
 ];
 
-export const metadata = {
-  title: '명함 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '명함 제작',
   description: '명함 소량·당일 제작. 부부피오피가 빠르게 만들어 드립니다.',
-};
+  path: '/card',
+  keywords: ['명함', '당일 명함', '소량 명함'],
+});
 
 export default function CardPage() {
   return (

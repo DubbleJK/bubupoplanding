@@ -1,13 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHeader from '@/components/layout/PageHeader';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
+import { getPublicKakaoUrl } from '@/lib/contact';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'DTF 파일 제작 가이드 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'DTF 파일 제작 가이드',
   description:
     'DTF 출력용 파일 제작 가이드. 아트보드, 해상도, 색상, 최소 굵기, 파일 전달 방식까지 실무 기준으로 안내합니다.',
-};
+  path: '/dtf-guide',
+  keywords: ['DTF', '전사', '파일 제작', '아트보드', '해상도'],
+});
 
 type AppSetting = {
   tool: string;
@@ -247,7 +252,7 @@ export default function DtfGuidePage() {
               DTF 페이지로 돌아가기
             </Link>
             <a
-              href={process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx'}
+              href={getPublicKakaoUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex flex-1 items-center justify-center rounded-2xl bg-[#FEE500] px-5 py-3 text-sm font-bold text-[#191919] transition hover:opacity-90"

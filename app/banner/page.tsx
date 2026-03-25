@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
+import { buildPageMetadata } from '@/lib/seo';
 
 const FAQ = [
   {
@@ -40,10 +42,12 @@ const PACKAGES = [
   },
 ];
 
-export const metadata = {
-  title: '배너 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '배너 제작',
   description: '배너, 현수막 당일·소량 제작. 부부피오피가 빠르게 만들어 드립니다.',
-};
+  path: '/banner',
+  keywords: ['배너', '현수막', '행사 배너'],
+});
 
 export default function BannerPage() {
   return (

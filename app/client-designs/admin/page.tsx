@@ -1,13 +1,17 @@
+import type { Metadata } from 'next';
 import {
   computeMonthlyPassword,
   getCredentialPeriodLabel,
   getSeoulYMD,
 } from '@/lib/client-designs-monthly';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: '시안 페이지 비밀번호 (관리자) | 부부피오피',
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: '시안 비밀번호 (관리자)',
+  description: '부부피오피 고객 시안 페이지 관리용. 검색엔진에 노출되지 않습니다.',
+  path: '/client-designs/admin',
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
+});
 
 export const dynamic = 'force-dynamic';
 

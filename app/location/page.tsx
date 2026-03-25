@@ -1,10 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHeader from '@/components/layout/PageHeader';
 import LocationMapEmbed from '@/components/location/LocationMapEmbed';
+import { getPublicKakaoUrl, getPublicPhoneDisplay, getTelHref } from '@/lib/contact';
+import { buildPageMetadata } from '@/lib/seo';
 
-const PHONE = process.env.NEXT_PUBLIC_PHONE || '010-0000-0000';
-const KAKAO_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
 const ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS?.trim() || '';
 const MAP_URL = process.env.NEXT_PUBLIC_MAP_URL?.trim() || '';
 
@@ -15,11 +15,13 @@ const NAVER_MAP_URL =
     ? `https://map.naver.com/v5/search/${encodeURIComponent(ADDRESS_FIRST_LINE)}`
     : '');
 
-export const metadata = {
-  title: '오시는 길 | BUBUPOP',
+export const metadata: Metadata = buildPageMetadata({
+  title: '오시는 길 · 위치 안내',
   description:
-    'BUBUPOP(부부피오피) 위치·방문·픽업 안내. 방문 전 카톡·전화 문의를 권장합니다.',
-};
+    '부부피오피 위치·방문·픽업 안내. 방문 전 카카오톡·전화 문의를 권장합니다.',
+  path: '/location',
+  keywords: ['부부피오피', '오시는 길', '픽업', '인쇄소 위치'],
+});
 
 /** 섹션 라벨: 한글·주황 통일 */
 const sectionLabel = 'text-sm font-bold text-primary';
@@ -102,9 +104,9 @@ export default function LocationPage() {
                 <span className="text-sm font-medium text-gray-500">전화</span>{' '}
                 <a
                   className="text-xl font-bold leading-none text-gray-900 underline-offset-2 hover:text-primary sm:text-2xl"
-                  href={`tel:${PHONE.replace(/-/g, '')}`}
+                  href={getTelHref()}
                 >
-                  {PHONE}
+                  {getPublicPhoneDisplay()}
                 </a>
               </p>
               <div className="mt-5 flex-1 border-t border-gray-200/90 pt-5">
@@ -184,7 +186,7 @@ export default function LocationPage() {
           <div className="mt-10 space-y-4 sm:mt-12">
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-3">
               <a
-                href={KAKAO_URL}
+                href={getPublicKakaoUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-[3.25rem] flex-1 items-center justify-center rounded-2xl bg-[#FEE500] py-4 text-base font-bold text-[#191919] transition hover:opacity-90"
@@ -193,7 +195,7 @@ export default function LocationPage() {
               </a>
               <a
                 className="flex min-h-[3.25rem] flex-1 items-center justify-center rounded-2xl border-2 border-gray-900 bg-white py-4 text-base font-bold text-gray-900 transition hover:bg-gray-50"
-                href={`tel:${PHONE.replace(/-/g, '')}`}
+                href={getTelHref()}
               >
                 전화로 문의하기
               </a>

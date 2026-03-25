@@ -45,13 +45,13 @@ body {
   @apply mt-2 text-[15px] leading-relaxed text-gray-600 text-pretty sm:text-base;
 }
 
-/* 하단 고정 CTA 공간 확보 */
+/* 하단 고정 CTA 공간 확보 (버튼 2줄 + 안내 문구) */
 body.has-fixed-cta {
-  padding-bottom: 5.5rem;
+  padding-bottom: 6.75rem;
 }
 
 @media (min-width: 768px) {
   body.has-fixed-cta {
-    padding-bottom: 6rem;
+    padding-bottom: 7rem;
   }
 }

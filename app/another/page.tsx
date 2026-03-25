@@ -1,7 +1,7 @@
+import type { Metadata } from 'next';
 import ServicePageLayout from '@/components/service-detail/ServicePageLayout';
-
-const KAKAO_URL =
-  process.env.NEXT_PUBLIC_KAKAO_URL || 'https://pf.kakao.com/_xxxxx';
+import { getPublicKakaoUrl } from '@/lib/contact';
+import { buildPageMetadata } from '@/lib/seo';
 
 const FAQ = [
   {
@@ -22,11 +22,13 @@ const FAQ = [
   },
 ];
 
-export const metadata = {
-  title: '각종 인쇄물 제작 | 부부피오피',
+export const metadata: Metadata = buildPageMetadata({
+  title: '각종 인쇄물 제작',
   description:
     '각종 인쇄물·홍보물 소량·당일 제작. 한 곳에서 용도에 맞게 제작. 부부피오피에 문의해 주세요.',
-};
+  path: '/another',
+  keywords: ['인쇄물', '홍보물', '소량 인쇄'],
+});
 
 export default function AnotherPage() {
   return (
@@ -73,7 +75,7 @@ export default function AnotherPage() {
                 </span>
               </p>
               <a
-                href={KAKAO_URL}
+                href={getPublicKakaoUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex min-h-[52px] items-center justify-center rounded-2xl bg-[#FEE500] px-8 py-3 text-base font-extrabold text-[#191919] transition hover:opacity-90 sm:mt-6"

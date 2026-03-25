@@ -1,9 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { getSiteUrl } from '@/lib/site-url';
 
-const base =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '') ||
-  'https://bubupoplanding.vercel.app';
+const base = getSiteUrl().replace(/\/$/, '');
 
 export default function robots(): MetadataRoute.Robots {
   return {

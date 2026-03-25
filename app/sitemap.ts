@@ -1,9 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { getSiteUrl } from '@/lib/site-url';
 
-const base =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '') ||
-  'https://bubupoplanding.vercel.app';
+const base = getSiteUrl().replace(/\/$/, '');
 
 /** 공개 랜딩만 포함 (고객 전용·API 제외) */
 const PATHS = [
