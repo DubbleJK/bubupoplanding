@@ -50,7 +50,7 @@ export default function DraftShowcaseSection({
       <div className="mx-auto max-w-4xl">
         <h2 className="section-title">{heading}</h2>
         {showClientDesignsCta ? (
-          <div className="mx-auto mt-2 max-w-2xl space-y-2.5 text-center text-pretty sm:text-left">
+          <div className="mt-2 max-w-2xl space-y-2.5 text-left text-pretty">
             <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
               포스터·피켓·용품 등{' '}
               <strong className="font-semibold text-gray-700">공개 시안 방향</strong>을 참고하실 수
@@ -63,7 +63,7 @@ export default function DraftShowcaseSection({
             </p>
           </div>
         ) : (
-          <div className="mx-auto mt-2 max-w-2xl space-y-2.5 text-center text-pretty sm:text-left">
+          <div className="mt-2 max-w-2xl space-y-2.5 text-left text-pretty">
             <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
               실제 진행했던{' '}
               <strong className="font-semibold text-gray-700">작업 사진</strong>을 모았습니다.
