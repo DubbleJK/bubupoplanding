@@ -12,36 +12,67 @@ export type ServicePortfolioGroup = {
   items: ServicePortfolioItem[];
 };
 
+export type PortfolioShowVariant = 'default' | 'printMisc';
+
 type Props = {
   groups: ServicePortfolioGroup[];
   /** true일 때만 /client-designs 안내 버튼 표시 (선거용품 페이지 전용) */
   showClientDesignsCta?: boolean;
+  /** 각종 인쇄물 등: 슬롯·빈 목록 문구를 제작 사례용으로 통일 */
+  portfolioVariant?: PortfolioShowVariant;
 };
+
+const DRAFT_SLOT = '2026년 신규 시안 준비중';
+const DRAFT_EMPTY = '2026년 신규 시안 준비 중입니다.';
+const PRINT_SLOT = '작업 사진 업로드 준비중';
+const PRINT_EMPTY = '작업 사진 업로드 준비 중입니다.';
 
 export default function DraftShowcaseSection({
   groups,
   showClientDesignsCta = false,
+  portfolioVariant = 'default',
 }: Props) {
   const heading = showClientDesignsCta ? '시안 모음' : '제작 사례';
+
+  const slotPlaceholder = showClientDesignsCta
+    ? DRAFT_SLOT
+    : portfolioVariant === 'printMisc'
+      ? PRINT_SLOT
+      : undefined;
+  const emptyMessage = showClientDesignsCta
+    ? DRAFT_EMPTY
+    : portfolioVariant === 'printMisc'
+      ? PRINT_EMPTY
+      : undefined;
 
   return (
     <section className="border-t border-gray-200 bg-gray-50 px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-4xl">
         <h2 className="section-title">{heading}</h2>
-        <p className="section-desc mx-auto max-w-2xl text-center sm:text-left">
-          {showClientDesignsCta ? (
-            <>
-              포스터·피켓·용품 등 <strong className="font-semibold text-gray-700">공개 시안 방향</strong>을
-              참고하실 수 있습니다. 결제가 완료된 고객님은 아래 버튼으로{' '}
-              <strong className="font-semibold text-gray-700">추가 시안</strong>을 확인하실 수 있습니다.
-            </>
-          ) : (
-            <>
-              실제 진행했던 <strong className="font-semibold text-gray-700">작업 사진</strong>을 모았습니다.
-              비슷한 구성이 필요하시면 카톡으로 레퍼런스로 알려주시면 됩니다.
-            </>
-          )}
-        </p>
+        {showClientDesignsCta ? (
+          <div className="mx-auto mt-2 max-w-2xl space-y-2.5 text-center text-pretty sm:text-left">
+            <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
+              포스터·피켓·용품 등{' '}
+              <strong className="font-semibold text-gray-700">공개 시안 방향</strong>을 참고하실 수
+              있습니다.
+            </p>
+            <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
+              결제가 완료된 고객님은 아래 버튼으로{' '}
+              <strong className="font-semibold text-gray-700">추가 시안</strong>을 확인하실 수
+              있습니다.
+            </p>
+          </div>
+        ) : (
+          <div className="mx-auto mt-2 max-w-2xl space-y-2.5 text-center text-pretty sm:text-left">
+            <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
+              실제 진행했던{' '}
+              <strong className="font-semibold text-gray-700">작업 사진</strong>을 모았습니다.
+            </p>
+            <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
+              비슷한 구성이 필요하시면 카톡으로 레퍼런스를 보내 주시면 됩니다.
+            </p>
+          </div>
+        )}
 
         <div className="mt-8 flex flex-col gap-10">
           {groups.map((group, gi) => (
@@ -57,6 +88,8 @@ export default function DraftShowcaseSection({
               <PortfolioItemsCarousel
                 items={group.items}
                 groupKey={`${group.groupTitle || 'group'}-${gi}`}
+                slotPlaceholder={slotPlaceholder}
+                emptyMessage={emptyMessage}
               />
             </div>
           ))}

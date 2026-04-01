@@ -60,6 +60,7 @@ export default function AnotherPage() {
         </>
       }
       hidePackages
+      portfolioVariant="printMisc"
       afterPackages={
         <section className="section section-muted pt-0">
           <div className="container">

@@ -13,14 +13,20 @@ type Props = {
   items: PortfolioCarouselItem[];
   /** 그룹별 안정적인 키 (예: groupTitle + index) */
   groupKey: string;
+  /** 이미지 없을 때 슬롯 안내 문구 */
+  slotPlaceholder?: string;
+  /** items가 비었을 때 안내 문구 */
+  emptyMessage?: string;
 };
 
 function PortfolioCard({
   item,
   sizes,
+  slotPlaceholder,
 }: {
   item: PortfolioCarouselItem;
   sizes: string;
+  slotPlaceholder: string;
 }) {
   return (
     <article className="overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
@@ -35,8 +41,8 @@ function PortfolioCard({
             quality={78}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-sm text-gray-400">
-            이미지 준비 중
+          <div className="flex h-full w-full items-center justify-center px-2 text-center text-sm leading-snug text-gray-400">
+            {slotPlaceholder}
           </div>
         )}
       </div>
@@ -45,7 +51,15 @@ function PortfolioCard({
   );
 }
 
-export default function PortfolioItemsCarousel({ items, groupKey }: Props) {
+const DEFAULT_SLOT = '이미지 준비 중';
+const DEFAULT_EMPTY = '제작 사례를 준비 중입니다.';
+
+export default function PortfolioItemsCarousel({
+  items,
+  groupKey,
+  slotPlaceholder = DEFAULT_SLOT,
+  emptyMessage = DEFAULT_EMPTY,
+}: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: items.length > 1,
     align: 'start',
@@ -53,7 +67,7 @@ export default function PortfolioItemsCarousel({ items, groupKey }: Props) {
 
   if (items.length === 0) {
     return (
-      <p className="mt-3 text-sm text-gray-500">공개 시안 준비 중입니다.</p>
+      <p className="mt-3 text-sm text-gray-500">{emptyMessage}</p>
     );
   }
 
@@ -70,6 +84,7 @@ export default function PortfolioItemsCarousel({ items, groupKey }: Props) {
                 <PortfolioCard
                   item={item}
                   sizes="(max-width: 640px) 92vw, 400px"
+                  slotPlaceholder={slotPlaceholder}
                 />
               </div>
             ))}
@@ -109,6 +124,7 @@ export default function PortfolioItemsCarousel({ items, groupKey }: Props) {
             key={`${groupKey}-grid-${i}`}
             item={item}
             sizes="(max-width: 896px) 100vw, 400px"
+            slotPlaceholder={slotPlaceholder}
           />
         ))}
       </div>

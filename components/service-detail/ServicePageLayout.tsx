@@ -8,6 +8,7 @@ import ProcessSection from '@/components/landing/ProcessSection';
 import CtaBlock from './CtaBlock';
 import PageHero, { type PageHeroImage, type PageHeroVideo } from './PageHero';
 import DraftShowcaseSection, {
+  type PortfolioShowVariant,
   type ServicePortfolioGroup,
   type ServicePortfolioItem,
 } from './DraftShowcaseSection';
@@ -46,6 +47,8 @@ type ServicePageLayoutProps = {
   hidePackages?: boolean;
   /** true면 「시안 모음」+ 결제 고객 전용(/client-designs) 버튼 — 선거용품만 true 권장. 그 외 페이지는 「제작 사례」 */
   showClientDesignsCta?: boolean;
+  /** 각종 인쇄물 등 슬롯 문구 전용 */
+  portfolioVariant?: PortfolioShowVariant;
 };
 
 const DEFAULT_PACKAGES: ServicePackage[] = [
@@ -73,6 +76,7 @@ export default function ServicePageLayout({
   packagesBelowNote,
   hidePackages = false,
   showClientDesignsCta = false,
+  portfolioVariant = 'default',
 }: ServicePageLayoutProps) {
   const draftGroups =
     portfolioGroups ??
@@ -97,6 +101,7 @@ export default function ServicePageLayout({
         <DraftShowcaseSection
           groups={draftGroups}
           showClientDesignsCta={showClientDesignsCta}
+          portfolioVariant={portfolioVariant}
         />
       ) : null}
       {!hidePackages ? (
