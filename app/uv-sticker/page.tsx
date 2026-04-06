@@ -108,9 +108,26 @@ export default function UvStickerPage() {
         {
           groupTitle: '',
           items: [
-            { title: '매장 유리창 UV' },
-            { title: '아크릴 표지 UV' },
-            { title: '소량 프로모 스티커' },
+            {
+              title: '휴대폰 케이스',
+              imageSrc: '/images/portfolio-uv-phone-case.png',
+            },
+            {
+              title: '대량 판촉물',
+              imageSrc: '/images/portfolio-uv-bulk-promo.png',
+            },
+            {
+              title: '소주잔',
+              imageSrc: '/images/portfolio-uv-soju-glass.png',
+            },
+            {
+              title: '각종 로고·브랜드',
+              imageSrc: '/images/portfolio-uv-brand-logos.png',
+            },
+            {
+              title: '보조배터리',
+              imageSrc: '/images/portfolio-uv-powerbank.png',
+            },
           ],
         },
       ]}
