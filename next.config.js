@@ -28,18 +28,23 @@ const nextConfig = {
   },
   async headers() {
     /** 카카오 roughmap 제거 후: 서드파티 스크립트는 self + Next 필수만 허용 */
+    const isProd = process.env.NODE_ENV === 'production';
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+      isProd
+        ? "script-src 'self' 'unsafe-inline'"
+        : "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https: blob:",
       "font-src 'self' data:",
       "connect-src 'self'",
       "frame-src 'self' https://www.google.com https://*.google.com https://maps.google.com https://map.naver.com https://*.naver.com https://*.naver.net https://*.pstatic.net https://map.kakao.com https://*.kakao.com https://*.daum.net https://*.daumcdn.net",
       "worker-src 'self' blob:",
+      "object-src 'none'",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
+      'upgrade-insecure-requests',
     ].join('; ');
 
     return [
@@ -50,7 +55,16 @@ const nextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
+          { key: 'X-DNS-Prefetch-Control', value: 'on' },
           { key: 'Content-Security-Policy', value: csp },
+        ],
+      },
+      {
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2|ttf)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
     ];
