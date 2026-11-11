@@ -47,6 +47,8 @@ type ServicePageLayoutProps = {
   hidePackages?: boolean;
   /** true면 「시안 모음」+ 결제 고객 전용(/client-designs) 버튼 — 선거용품만 true 권장. 그 외 페이지는 「제작 사례」 */
   showClientDesignsCta?: boolean;
+  /** poster면 세로 시안 전체를 낮은 해상도로 표시 */
+  showcaseFrame?: 'landscape' | 'poster';
   /** 각종 인쇄물 등 슬롯 문구 전용 */
   portfolioVariant?: PortfolioShowVariant;
 };
@@ -77,6 +79,7 @@ export default function ServicePageLayout({
   hidePackages = false,
   showClientDesignsCta = false,
   portfolioVariant = 'default',
+  showcaseFrame = 'landscape',
 }: ServicePageLayoutProps) {
   const draftGroups =
     portfolioGroups ??
@@ -102,6 +105,7 @@ export default function ServicePageLayout({
           groups={draftGroups}
           showClientDesignsCta={showClientDesignsCta}
           portfolioVariant={portfolioVariant}
+          frame={showcaseFrame}
         />
       ) : null}
       {!hidePackages ? (

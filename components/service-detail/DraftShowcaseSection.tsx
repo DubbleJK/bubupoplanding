@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import PortfolioItemsCarousel from './PortfolioItemsCarousel';
 
 export type ServicePortfolioItem = {
@@ -10,6 +9,8 @@ export type ServicePortfolioItem = {
 export type ServicePortfolioGroup = {
   groupTitle: string;
   items: ServicePortfolioItem[];
+  /** true면 시안이 준비될 때까지 화면에서 제외 */
+  hidden?: boolean;
 };
 
 export type PortfolioShowVariant = 'default' | 'printMisc';
@@ -20,6 +21,8 @@ type Props = {
   showClientDesignsCta?: boolean;
   /** 각종 인쇄물 등: 슬롯·빈 목록 문구를 제작 사례용으로 통일 */
   portfolioVariant?: PortfolioShowVariant;
+  /** poster면 세로 시안 전체를 낮은 해상도로 표시 */
+  frame?: 'landscape' | 'poster';
 };
 
 const DRAFT_SLOT = '2026년 신규 시안 준비중';
@@ -31,7 +34,10 @@ export default function DraftShowcaseSection({
   groups,
   showClientDesignsCta = false,
   portfolioVariant = 'default',
+  frame = 'landscape',
 }: Props) {
+  const visibleGroups = groups.filter((group) => !group.hidden);
+  if (visibleGroups.length === 0) return null;
   const heading = showClientDesignsCta ? '시안 모음' : '제작 사례';
 
   const slotPlaceholder = showClientDesignsCta
@@ -56,11 +62,14 @@ export default function DraftShowcaseSection({
               <strong className="font-semibold text-gray-700">공개 시안 방향</strong>을 참고하실 수
               있습니다.
             </p>
-            <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
-              결제가 완료된 고객님은 아래 버튼으로{' '}
-              <strong className="font-semibold text-gray-700">추가 시안</strong>을 확인하실 수
-              있습니다.
-            </p>
+            <div className="rounded-2xl border-2 border-primary bg-primary-light px-4 py-3.5 shadow-sm sm:px-5 sm:py-4">
+              <p className="text-base font-extrabold leading-snug text-gray-900 sm:text-lg">
+                모든 시안은 색상, 문구 수정이 가능합니다.
+              </p>
+              <p className="mt-1.5 text-base font-extrabold leading-snug text-primary sm:text-lg">
+                자세한 문의는 카톡 또는 전화로 문의 주세요!
+              </p>
+            </div>
           </div>
         ) : (
           <div className="mt-2 max-w-2xl space-y-2.5 text-left text-pretty">
@@ -75,7 +84,7 @@ export default function DraftShowcaseSection({
         )}
 
         <div className="mt-8 flex flex-col gap-10">
-          {groups.map((group, gi) => (
+          {visibleGroups.map((group, gi) => (
             <div
               key={`${group.groupTitle || 'group'}-${gi}`}
               className="rounded-2xl border-2 border-gray-200 bg-white p-4 shadow-sm sm:p-6"
@@ -90,26 +99,12 @@ export default function DraftShowcaseSection({
                 groupKey={`${group.groupTitle || 'group'}-${gi}`}
                 slotPlaceholder={slotPlaceholder}
                 emptyMessage={emptyMessage}
+                frame={frame}
               />
             </div>
           ))}
         </div>
 
-        {showClientDesignsCta ? (
-          <div className="mt-10 flex flex-col items-center gap-3">
-            <Link
-              href="/client-designs"
-              className="inline-flex min-h-[3.25rem] w-full max-w-md items-center justify-center rounded-2xl bg-primary px-6 py-3 text-center text-base font-extrabold text-white shadow-sm transition hover:bg-primary-hover sm:w-auto sm:px-10"
-            >
-              결제 완료 고객 전용 · 추가 시안 보기
-            </Link>
-            <p className="max-w-md text-center text-xs leading-relaxed text-gray-500">
-              결제 확인 후 상담원이 안내하는{' '}
-              <strong className="text-gray-700">월간 비밀번호(숫자 4자리)</strong>로 입장합니다.
-              비밀번호는 매월 10일(서울)에 자동 갱신됩니다.
-            </p>
-          </div>
-        ) : null}
       </div>
     </section>
   );

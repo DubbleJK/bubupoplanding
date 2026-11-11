@@ -43,6 +43,42 @@ const PACKAGES = [
   { title: '맞춤 선거용품', desc: '원하시는 품목 문의', tag: null },
 ];
 
+/** 회장용 포스터. D번호 순. 여08 파일명은 여9번시안.jpg */
+const POSTERS: { file: string; title: string }[] = [
+  { file: '01-nam.jpg', title: '01 모던 블루' },
+  { file: '01-yeo.jpg', title: '02 핑크베이직' },
+  { file: '02-nam.jpg', title: '03 블루타이포' },
+  { file: '02-yeo.jpg', title: '04 파스텔컬러' },
+  { file: '03-nam.jpg', title: '05 블랙레드' },
+  { file: '06-yeo.jpg', title: '06 Y2K퍼플' },
+  { file: '07-nam.jpg', title: '07 스포츠옐로' },
+  { file: '07-yeo.jpg', title: '08 스포츠레드' },
+  { file: '04-nam.jpg', title: '09 그린타이포' },
+  { file: '03-yeo.jpg', title: '10 픽셀게임' },
+  { file: '06-nam.jpg', title: '11 Y2K톰보이그리드' },
+  { file: '04-yeo.jpg', title: '12 스쿨노트' },
+  { file: '05-nam.jpg', title: '13 드림블루' },
+  { file: '05-yeo.jpg', title: '14 카카오톡' },
+  { file: '08-nam.jpg', title: '15 빈티지신문' },
+  { file: '09-yeo.jpg', title: '16 인스타그램' },
+];
+
+const POSTER_GROUPS = [
+  {
+    groupTitle: '포스터 시안',
+    items: POSTERS.map((item) => ({
+      title: item.title,
+      imageSrc: `/images/election/posters/${item.file}`,
+    })),
+  },
+];
+
+/** 피켓·용품은 시안이 생기면 hidden만 해제하면 다시 보입니다. */
+const LATER_GROUPS = [
+  { groupTitle: '피켓 시안', hidden: true, items: [{ title: '선거 배너' }] },
+  { groupTitle: '용품 시안', hidden: true, items: [{ title: '명함·전단 세트' }] },
+];
+
 export const metadata: Metadata = buildPageMetadata({
   title: '선거용품 제작',
   description: '선거용품 소량·당일 제작. 부부피오피에 문의해 주세요.',
@@ -85,11 +121,8 @@ export default function ElectionPage() {
       faqTitle="선거용품 FAQ"
       faqItems={FAQ}
       showClientDesignsCta
-      portfolioGroups={[
-        { groupTitle: '포스터 시안', items: [{ title: '선거 현수막' }] },
-        { groupTitle: '피켓 시안', items: [{ title: '선거 배너' }] },
-        { groupTitle: '용품 시안', items: [{ title: '명함·전단 세트' }] },
-      ]}
+      showcaseFrame="poster"
+      portfolioGroups={[...POSTER_GROUPS, ...LATER_GROUPS]}
     />
   );
 }
