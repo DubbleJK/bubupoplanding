@@ -50,7 +50,7 @@ function PortfolioCard({
                 : 'object-cover object-center'
             }
             sizes={sizes}
-            quality={poster ? 45 : 78}
+            quality={poster ? 72 : 78}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center px-2 text-center text-sm leading-snug text-gray-400">
@@ -99,7 +99,7 @@ export default function PortfolioItemsCarousel({
               <div key={`${groupKey}-swipe-${i}`} className={slideClass}>
                 <PortfolioCard
                   item={item}
-                  sizes={poster ? '220px' : '(max-width: 640px) 92vw, 400px'}
+                  sizes={poster ? '(max-width: 640px) 78vw, 320px' : '(max-width: 640px) 92vw, 400px'}
                   slotPlaceholder={slotPlaceholder}
                   frame={frame}
                 />

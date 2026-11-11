@@ -56,17 +56,21 @@ export default function DraftShowcaseSection({
       <div className="mx-auto max-w-4xl">
         <h2 className="section-title">{heading}</h2>
         {showClientDesignsCta ? (
-          <div className="mt-2 max-w-2xl space-y-2.5 text-left text-pretty">
-            <p className="text-[15px] leading-relaxed text-gray-600 sm:text-base">
+          <div className="mt-2 space-y-3 text-left text-pretty">
+            <p className="max-w-2xl text-[15px] leading-relaxed text-gray-600 sm:text-base">
               포스터·피켓·용품 등{' '}
               <strong className="font-semibold text-gray-700">공개 시안 방향</strong>을 참고하실 수
               있습니다.
             </p>
-            <div className="rounded-2xl border-2 border-primary bg-primary-light px-4 py-3.5 shadow-sm sm:px-5 sm:py-4">
-              <p className="text-base font-extrabold leading-snug text-gray-900 sm:text-lg">
+            <div className="w-full rounded-2xl bg-primary px-4 py-4 text-white shadow-sm sm:px-6 sm:py-5">
+              <p className="text-base font-extrabold leading-snug sm:text-lg">
                 모든 시안은 색상, 문구 수정이 가능합니다.
               </p>
-              <p className="mt-1.5 text-base font-extrabold leading-snug text-primary sm:text-lg">
+              <p className="mt-2 text-sm font-bold leading-relaxed sm:text-base">
+                화면의 시안은 미리보기용으로 화질을 낮춰 두었습니다. 실제 작업은 요청에 맞춰
+                고화질로 수정해 드립니다.
+              </p>
+              <p className="mt-2 text-base font-extrabold leading-snug sm:text-lg">
                 자세한 문의는 카톡 또는 전화로 문의 주세요!
               </p>
             </div>
